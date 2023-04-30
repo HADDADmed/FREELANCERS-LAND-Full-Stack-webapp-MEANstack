@@ -1,0 +1,50 @@
+<header>
+  <div class="navbar-container">
+       <div id="navbar1">
+                  <div id="Logo">
+                <li > <a  routerLink="#LogoLink">
+                  <img src="assets/images/navbarImgs/pngegg.png"  alt="Logo" style="height: 90px;">
+                      </a>
+              </li>
+                  </div>
+                <li>
+                  <div class="search-container">
+                      <input #s type="text" name="search" placeholder="Search..." (keyup.enter)="search(s.value)" [value]="searchTerm" class="search-input">
+                      <a routerLink="#searchData" class="search-btn">
+                              <i class="fas fa-search"></i>
+                      </a>
+                  </div>
+              </li>
+              <li>
+                  <div id="contact">
+                      <a  routerLink="#acountLink">
+                          <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px;" alt="Account">
+                      </a>
+                  </div>
+              </li>
+        </div>
+
+        <div id="navbar2">
+              <ul>
+
+                <li>  <a  routerLink="/"><strong>Homme Page</strong></a> </li>
+                <li>  <a  routerLink="/1" ><strong>(Link Test1)</strong></a> </li>
+                <li>  <a  routerLink="/2"><strong>(Link Test2)</strong></a> </li>
+                <li>  <a  routerLink="/3" ><strong>(Link Test3)</strong></a> </li>
+                <li>  <a  routerLink="/4"><strong>(Link Test4)</strong></a>  </li>
+                <li>  <a  routerLink="/5" ><strong>(Link Test5)</strong></a> </li>
+                <li>  <a  routerLink="/6"><strong>(Link Test6)</strong></a> </li>
+                <li>  <a  routerLink="/7"><strong>(Link Test7)</strong></a> </li>
+                <li>  <a  routerLink="/8"><strong>(Link Test8)</strong></a> </li>
+                <li>  <a  routerLink="/9" ><strong>(Link Test9)</strong></a> </li>
+                <li>  <a  routerLink="/10"><strong>(Link Test10)</strong></a> </li>
+                <li>  <a  routerLink="/10"><strong>(Link Test11)</strong></a> </li>
+
+
+              </ul>
+
+          </div>
+  </div>
+
+
+  </header>
