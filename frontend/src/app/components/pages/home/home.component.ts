@@ -1,7 +1,5 @@
 import { ServiceService } from './../../../services/service.service';
 import { Service } from './../../../shared/models/Service';
-import { ProductService } from './../../../services/product.service';
-import { Product } from './../../../shared/models/Product';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,9 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent {
 
-
-
-     products:Product[]= [];
      services:Service[]=[];
      constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
       activatedRoute.params.subscribe((params)=>{
