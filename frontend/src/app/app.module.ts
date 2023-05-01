@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { ServiceComponent } from './components/pages/service/service.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +17,16 @@ import { ServiceComponent } from './components/pages/service/service.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ServiceComponent
+    ServiceComponent,
+    LoginPageComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
