@@ -11,13 +11,15 @@ import { Service } from 'src/app/shared/models/Service';
 export class ServiceComponent {
 
 
-   
+
 
    service!:Service ;
   constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
    activatedRoute.params.subscribe((params)=>{
      if (params.serviceId) {
-       this.service = serviceService.getServiceById(params.serviceId);
+       serviceService.getServiceById(params.serviceId).subscribe(serverService=>{
+        this.service = serverService
+       })
      }
    })
 
