@@ -9,6 +9,9 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { ServiceComponent } from './components/pages/service/service.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
 
 
 @NgModule({
@@ -19,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ServiceComponent,
     LoginPageComponent,
+    InputContainerComponent,
 
 
   ],
@@ -26,7 +30,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:'toast-bottom-right',
+      timeOut:3000,
+      newestOnTop:false,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

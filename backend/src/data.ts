@@ -80,13 +80,17 @@ export const sample_users: any[] = [
     email: "john@gmail.com",
     password: "12345",
     address: "Toronto On",
-    isAdmin: true,
   },
   {
     name: "Jane Doe",
     email: "Jane@gmail.com",
     password: "12345",
     address: "Shanghai",
-    isAdmin: false,
   },
+  {
+    name: "HADDAD MOE",
+    email: "mohh2045@gmail.com",
+    password: "12345",
+    address: "Nesnana",
+  }
 ];

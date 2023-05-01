@@ -2,7 +2,7 @@
   <div class="navbar-container">
        <div id="navbar1">
                   <div id="Logo">
-                <li > <a  routerLink="#LogoLink">
+                <li > <a  routerLink="/">
                   <img src="assets/images/navbarImgs/pngegg.png"  alt="Logo" style="height: 90px;">
                       </a>
               </li>
@@ -11,19 +11,34 @@
                   <div class="search-container">
                       <input #s type="text" name="search" placeholder="Search..." (keyup.enter)="search(s.value)" [value]="searchTerm" class="search-input">
                       <a routerLink="#searchData" class="search-btn">
-                              <i class="fas fa-search"></i>
+                         <i class="fas fa-search"></i>
                       </a>
                   </div>
               </li>
-              <li>
-                  <div id="contact">
-                      <a  routerLink="#acountLink">
-                          <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px;" alt="Account">
-                      </a>
-                  </div>
-              </li>
-        </div>
 
+                    <li>
+                        <div class="dropdown"  *ngIf="isAuthenticated()">
+                          <button  >
+                              <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px;" alt="Account">
+                                <strong>  {{user.name }}</strong>
+                          </button>
+                          <div class="dropdown-options">
+                            <a href="#">Dashboard</a>
+                            <a href="#">Setting</a>
+                            <a  (click)="logout()">Logout</a>
+                          </div>
+                        </div>
+                        <div class="dropdown"  *ngIf="!isAuthenticated()">
+                          <button routerLink="/login" >
+                              <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px;" alt="Account">
+                                <strong> Login</strong>
+                          </button>
+
+                        </div>
+
+              </li>
+
+        </div>
         <div id="navbar2">
               <ul>
 

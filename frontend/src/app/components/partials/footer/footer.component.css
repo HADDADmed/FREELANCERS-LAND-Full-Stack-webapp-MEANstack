@@ -1,5 +1,6 @@
 
 .footer-clean {
+  z-index: -199;
   padding: 150px;
   position: relative;
   top: 0%;

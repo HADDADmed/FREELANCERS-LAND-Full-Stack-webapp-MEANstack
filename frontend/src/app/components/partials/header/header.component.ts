@@ -1,5 +1,7 @@
+import { UserService } from './../../../services/user.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Component } from '@angular/core';
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +14,17 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   searchTerm='';
-  constructor(activatedRoute:ActivatedRoute,private router:Router){
+  user!:User;
+  constructor(activatedRoute:ActivatedRoute,private router:Router,private userService:UserService){
 
     activatedRoute.params.subscribe((params)=>{
       if (params.searchTerm) {
         this.searchTerm  = params.searchTerm;
     }})
+
+    userService.userObservable.subscribe((newUser)=>{
+      this.user  = newUser;
+    })
 
   }
   search(Term:String):void{
@@ -26,5 +33,11 @@ export class HeaderComponent {
     }
   }
 
+  logout(){
+    this.userService.logout();
+  }
+   isAuthenticated(){
+    return this.user.token
+   }
 }
 
