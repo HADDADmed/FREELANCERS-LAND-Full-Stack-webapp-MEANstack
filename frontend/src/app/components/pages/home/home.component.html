@@ -1,20 +1,16 @@
 
 
+
 <div class = "products">
   <div class = "container">
-
-    <p style="color:transparent;">.</p>
-    <p style="color:transparent;">.</p>
-
-
-      <h1 class = "lg-title"><strong> Special Services Offers</strong></h1>
+      <h1 class = "lg-title">Special Services Offers</h1>
 
       <div class = "product-items" >
           <!-- single product -->
 
           <div class = "product" *ngFor="let service of services">
                 <div class = "product-content">
-                    <a routerLink="/service/{{service._id}}">
+                    <a routerLink="/service/{{service.id}}">
                     <div class = "product-img">
                         <img src="{{ service.imgPath }}" alt="{{ service.name }}">
                       </div>
@@ -33,7 +29,7 @@
                       </div>
                       <a href = "#" class = "product-name"> {{service.description}}</a>
                       <p class = "product-price">$ {{service.price | number: '1.2-2' }}</p>
-                      <p class = "product-price">$ {{(service.price+10)  | number: '1.2-2' }}</p>
+                      <p class = "product-price">$ {{service.price+10  | number: '1.2-2' }}</p>
                     </div>
 
                     <div class = "product-btns">
@@ -46,5 +42,4 @@
                   </div>
 
                   </div>
-
 

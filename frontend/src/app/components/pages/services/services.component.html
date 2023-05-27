@@ -1,0 +1,30 @@
+<div class = "product-content">
+    <a routerLink="/service/{{data.id}}">
+      <div class = "product-img">
+        <img src="{{ data.imgPath }}" alt="{{ data.name }}">
+      </div>
+    </a>
+    <div class = "product-info">
+      <div class = "product-info-top">
+        <h2 class = "sm-title">{{data.name}}</h2>
+        <div class = "rating">
+          <span><i class = "fas fa-star"></i></span>
+          <span><i class = "fas fa-star"></i></span>
+          <span><i class = "fas fa-star"></i></span>
+          <span><i class = "fas fa-star"></i></span>
+          <span><i class = "far fa-star"></i></span>
+        </div>
+      </div>
+      <a href = "#" class = "product-name"> {{data.description}}</a>
+      <p class = "product-price">$ {{data.price | number: '1.2-2' }}</p>
+      <p class = "product-price">$ {{data.price+10  | number: '1.2-2' }}</p>
+    </div>
+    <div class = "product-btns">
+      <button type = "button" class = "btn-cart" (click)="add()"> add to List
+        <span><i class = "fas fa-th-large"></i></span>
+      </button>
+      <button type = "button" class = "btn-buy"> add to favourite
+          <span><i class = "fas fa-heart"></i></span>
+      </button>
+    </div>
+  </div>
