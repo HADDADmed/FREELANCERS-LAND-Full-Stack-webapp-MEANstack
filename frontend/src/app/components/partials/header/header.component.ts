@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit{
 
 changeColor() {
   const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
-  navbar!.style.backgroundColor = "#418A00"; // Change the background color to red
+  navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
 }
 
 @Input() name: string = '';

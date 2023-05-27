@@ -12,7 +12,6 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
-<<<<<<< HEAD
 import { ScrollDirective } from './scroll.directive';
 import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { NewServicePostComponent } from './components/pages/new-service-post/new-service-post.component';
@@ -21,13 +20,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { UserServicesComponent } from './components/pages/user-services/user-services.component';
-
-=======
-import { InputContainerComponent } from './components/partials/input-container/input-container.component';
-import { ServicesComponent } from './components/pages/services/services.component';
 import { CartsComponent } from './components/carts/carts.component';
 import { SnniperComponent } from './components/partials/snniper/snniper.component';
->>>>>>> 0a13aaff2f35f7241eb68c59a2b06a0fdb8d00d8
+import { ServicesComponent } from './components/pages/services/services.component';
 
 
 @NgModule({
@@ -38,33 +33,24 @@ import { SnniperComponent } from './components/partials/snniper/snniper.componen
     FooterComponent,
     ServiceComponent,
     LoginPageComponent,
-<<<<<<< HEAD
    ScrollDirective,
    RegistrationComponent,
-
    EditServiceComponent,
     UserServicesComponent,
-
-
-  ],
-  imports: [
-
-=======
-    InputContainerComponent,
+    SnniperComponent,
     ServicesComponent,
     CartsComponent,
-    SnniperComponent,
+
+
   ],
   imports: [
     FormsModule,
->>>>>>> 0a13aaff2f35f7241eb68c59a2b06a0fdb8d00d8
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule,
     MatIconModule,
     MatButtonModule,
     MatInputModule,
