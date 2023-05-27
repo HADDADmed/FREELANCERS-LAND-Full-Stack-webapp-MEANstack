@@ -8,10 +8,13 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { ServiceComponent } from './components/pages/service/service.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
 import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { ServicesComponent } from './components/pages/services/services.component';
+import { CartsComponent } from './components/carts/carts.component';
+import { SnniperComponent } from './components/partials/snniper/snniper.component';
 
 
 @NgModule({
@@ -23,10 +26,12 @@ import { InputContainerComponent } from './components/partials/input-container/i
     ServiceComponent,
     LoginPageComponent,
     InputContainerComponent,
-
-
+    ServicesComponent,
+    CartsComponent,
+    SnniperComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
