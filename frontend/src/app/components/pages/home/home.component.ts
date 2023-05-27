@@ -33,7 +33,7 @@ export class HomeComponent {
         this.cartProducts=JSON.parse(localStorage.getItem("cart")!)
         let exist=this.cartProducts.find(item=>item.id==event.id)
         if(exist){
-          alert("Product already exist!!")
+          alert("Service already exist!!")
         }else{
           this.cartProducts.push(event)
           localStorage.setItem("cart",JSON.stringify(this.cartProducts))
