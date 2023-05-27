@@ -22,8 +22,8 @@ export class HomeComponent {
         else{
            servicesObservable = this.serviceService.getAll();
         }
-        servicesObservable.subscribe((serverService) => {
-              this.services= serverService;
+        servicesObservable.subscribe((r) => {
+              this.services= r;
         })
       })
 
