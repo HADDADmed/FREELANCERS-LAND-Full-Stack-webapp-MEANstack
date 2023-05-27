@@ -1,3 +1,4 @@
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
@@ -11,10 +12,17 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
-import { InputContainerComponent } from './components/partials/input-container/input-container.component';
-import { ServicesComponent } from './components/pages/services/services.component';
+import { ScrollDirective } from './scroll.directive';
+import { RegistrationComponent } from './components/pages/registration/registration.component';
+import { NewServicePostComponent } from './components/pages/new-service-post/new-service-post.component';
+import { EditServiceComponent } from './components/pages/edit-service/edit-service.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { UserServicesComponent } from './components/pages/user-services/user-services.component';
 import { CartsComponent } from './components/carts/carts.component';
 import { SnniperComponent } from './components/partials/snniper/snniper.component';
+import { ServicesComponent } from './components/pages/services/services.component';
 
 
 @NgModule({
@@ -25,10 +33,15 @@ import { SnniperComponent } from './components/partials/snniper/snniper.componen
     FooterComponent,
     ServiceComponent,
     LoginPageComponent,
-    InputContainerComponent,
+   ScrollDirective,
+   RegistrationComponent,
+   EditServiceComponent,
+    UserServicesComponent,
+    SnniperComponent,
     ServicesComponent,
     CartsComponent,
-    SnniperComponent,
+
+
   ],
   imports: [
     FormsModule,
@@ -37,11 +50,16 @@ import { SnniperComponent } from './components/partials/snniper/snniper.componen
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right',
       timeOut:3000,
       newestOnTop:false,
-    })
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

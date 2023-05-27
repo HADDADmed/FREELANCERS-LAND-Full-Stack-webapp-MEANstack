@@ -1,4 +1,12 @@
 
+
+<p style="color:transparent;">.</p>
+<p style="color:transparent;">.</p>
+<p style="color:transparent;">.</p>
+<p style="color:transparent;">.</p>
+
+
+
 <div class="background" >
   <div class="shape"></div>
   <div class="shape"></div>
@@ -6,19 +14,19 @@
 
 
 <form [formGroup]="loginForm" (ngSubmit)="submit()">
-  <h3>Login Here</h3>
-  <label for="username">Username<span class="ereure"><b>*</b></span></label>
-  <input type="text"  formControlName="email" name="username" placeholder="Email or Phone" required id="username">
-  <div  class="form-text text-danger" *ngIf="fc.email.errors && isSubmited">
+    <h3 style="color:black;">Login Here</h3>
+    <label style="color:black;" for="username">Username<span class="ereure"><b>*</b></span></label>
+    <input style="color:black;"type="text"  formControlName="email" name="username" placeholder="Email or Phone" required id="username">
+    <div  class="form-text text-danger" *ngIf="fc.email.errors && isSubmited">
     <div   class="form-text text-danger" *ngIf="fc.email.errors.required"> should be not empty</div>
     <div  class="form-text text-danger" *ngIf="fc.email.errors.email"> invalid email </div>
-  </div>
+    </div>
 
 
-  <label for="password">Password<span class="ereure"><b>*</b></span></label>
-  <input type="password" formControlName="password"  name="password" placeholder="Password" required id="password">
+  <label style="color:black;" for="password">Password<span class="ereure"><b>*</b></span></label>
+  <input style="color:black;" type="password" formControlName="password"  name="password" placeholder="Password" required id="password">
   <div class="form-text text-danger" *ngIf="fc.password.errors && isSubmited">
-    <div class="form-text text-danger" *ngIf="fc.password.errors.required"> should be not empty</div>
+  <div class="form-text text-danger" *ngIf="fc.password.errors.required"> should be not empty</div>
   </div>
 
 

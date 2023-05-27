@@ -9,10 +9,6 @@ import { Service } from 'src/app/shared/models/Service';
   styleUrls: ['./service.component.css']
 })
 export class ServiceComponent {
-
-
-
-
    service!:Service ;
   constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
    activatedRoute.params.subscribe((params)=>{

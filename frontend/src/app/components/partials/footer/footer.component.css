@@ -1,12 +1,16 @@
 
 .footer-clean {
-  z-index: 900;
-  padding: 150px;
-  position: relative;
-  top: 0%;
-  background-color:#fff;
-  color:#4b4c4d;
+
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #4b4c4d;
+  padding: 20px;
 }
+
+
 
 .footer-clean h3 {
   margin-top:0;

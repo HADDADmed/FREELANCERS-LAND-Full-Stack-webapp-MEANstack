@@ -7,7 +7,7 @@
 @import url(  "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css");
 @import url(  "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');  /** Poppins Font **/
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js');  /** Poppins Font **/
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 *{
   box-sizing: border-box;
@@ -244,3 +244,6 @@ button.toast-close-button {
   }
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

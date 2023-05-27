@@ -1,5 +1,5 @@
 export class Service{
-  id!:string;
+  _id?:string;
   name!:string;
   price!:number;
   description!:string;
