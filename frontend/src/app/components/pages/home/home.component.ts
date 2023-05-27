@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  cartProducts:any[]=[]
+
+     cartProducts:any[]=[]
      services:Service[]=[];
      constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
 
@@ -22,6 +23,7 @@ export class HomeComponent {
         else{
            servicesObservable = this.serviceService.getAll();
         }
+
         servicesObservable.subscribe((serverService) => {
               this.services= serverService;
               console.log(this.services)
@@ -38,11 +40,10 @@ export class HomeComponent {
           this.cartProducts.push(event)
           localStorage.setItem("cart",JSON.stringify(this.cartProducts))
           console.log(this.cartProducts)
-        } 
+        }
       }else{
         this.cartProducts.push(event)
         localStorage.setItem("cart",JSON.stringify(this.cartProducts))
       }
-      
-    }
-}
+
+    }}

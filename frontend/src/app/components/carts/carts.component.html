@@ -1,4 +1,9 @@
 <div class="container">
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  
     <div class="cartBox">
         <div class="text-center">
             <h1 class="text-danger">Shopping Cart</h1>
@@ -29,7 +34,7 @@
                         <button class="btn btn-danger" (click)="deleteProduct(index)" >Delete</button>
                     </td>
                 </tr>
-            </tbody> 
+            </tbody>
             <tfoot>
                 <tr>
                     <th></th>
@@ -41,12 +46,12 @@
                 </tr>
             </tfoot>
         </table>
-        
+
     </div>
     <div class="text-center">
         <app-snniper *ngIf="!success && a"></app-snniper>
     </div>
-    
+
     <div class="alert alert-success" role="alert" *ngIf="success"><strong>Well done!</strong> Your Order is Successfully Send</div>
-    
+
 </div>

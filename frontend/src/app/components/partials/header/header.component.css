@@ -7,9 +7,9 @@
 #navbar-container {
   display: flex; /* add this property */
   width: 100%;
-  max-width: 100%;
   height: 50px;
-  overflow-x: auto;
+ /* adding space betwween the navbar and the page  */
+  padding-bottom: 20px;  /* adding space betwween the navbar and the page  */
 
 }
 
@@ -20,13 +20,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
+  position: fixed;
   width: 100%;
-  height: 110px;
-  white-space: nowrap;
-  background: #ffff;
-
-
+  height: 120px;
+  z-index: 900;
+  background-color: transparent;
+  top: 0;
 
 }
 #navbar1 ul{
@@ -63,22 +62,30 @@
 
 #navbar2
 {
-  position: relative;
+  position: fixed;
   width: 100%;
+  top: 120px;
+  background-color: green;
   white-space: nowrap;
-  background: #ffff;
+  background: var(--alice-blue);
   border: 1px solid ;
-  border-color: #707B7C;
+  border-bottom-color:  black;
+  border-top-color: black;
+  border-left: none;
+  border-right: none;
   overflow-x: auto; /* add this line */
-  z-index:1;
-
-
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:  10px;
+  z-index: 9;
 }
 #navbar2 ul{
 
   list-style-type: none;
   text-align: center;
-  color: #707B7C;
+  color: white;
 }
 
 #navbar2 li
@@ -89,7 +96,7 @@
 #navbar2 li a{
   font-size: 15px;
   text-decoration: none;
-  color: #707B7C;
+  color: green;
 
 }
 #navbar2 li a:hover {
@@ -199,6 +206,7 @@ animation: hoverShake 0.15s linear 3;
 .dropdown {
   display: inline-block;
   position: relative;
+  z-index: 1005;
 }
 
 button{
@@ -207,6 +215,7 @@ button{
   padding:5px 10px;
   font-size:18px;
   cursor:pointer;
+  background-color: transparent;
 }
 
 button:hover{
@@ -237,10 +246,26 @@ button:hover{
   padding: 5px;
   text-decoration: none;
   padding:20px 40px;
+  z-index: 1005;
 }
 
 .dropdown-options a:hover {
   color: #0a0a23;
   background-color: #ddd;
   border-radius:5px;
+}
+
+.scrollCss {
+  background: yellow;
+
+}
+
+.hdr {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+  margin-left:-8px;
+  margin-top: -20px;
+
 }

@@ -28,14 +28,14 @@ export class UserService {
               this.toastrService.success(
                 `Welcom ${user.name} to Hiver 1`,
                 `Login successful :)`,
-                {positionClass: 'toast-center-center'}
+                {positionClass: 'toast-top-center'}
               )
           },
           error:(errorResponse)=>{
             this.toastrService.error(
               errorResponse.error,
               `Login failed :(`,
-              {positionClass:'toast-center-center'}
+              {positionClass:'toast-top-center'}
             )
           }
         })
