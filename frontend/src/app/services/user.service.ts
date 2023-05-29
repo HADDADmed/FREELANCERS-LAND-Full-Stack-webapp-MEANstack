@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { User } from '../shared/models/User';
-import { SERVICES_URL, USER_LOGIN_URL } from '../shared/constants/urls';
+import { User } from 'src/app/shared/models/User';
+import { SERVICES_URL, USER_LOGIN_URL ,USER_REGISTER_URL} from '../shared/constants/urls';
 import { IUserlogin } from '../shared/interfaces/IUserLogin';
 import { ToastrService } from 'ngx-toastr';
 
@@ -55,6 +55,41 @@ export class UserService {
     if (userJason) return JSON.parse(userJason) as User;
     return  new User();
   }
+
+
+  register(user: any): Observable<User> {
+    const newUser: User = {  
+      _id: '',
+      name: '',
+      email: '',
+      password: '',
+      token: ''
+    };
+  
+    newUser.name = user.name;
+    newUser.email = user.email;
+    newUser.password = user.password;
+      console.log('aruved to register() in user.service.ts');
+    return this.http.post<User>(USER_REGISTER_URL, newUser).pipe(
+      tap({
+        next: (user) => {
+          this.toastrService.success(
+            `Account created successfully`,
+            `Success :)`,
+            { positionClass: 'toast-top-left' }
+          );
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(
+            errorResponse.error,
+            `Failed to create account :(`,
+            { positionClass: 'toast-top-left' }
+          );
+        }
+      })
+    );
+  }
+  
 
 
 

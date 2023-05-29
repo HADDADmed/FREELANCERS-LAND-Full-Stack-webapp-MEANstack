@@ -33,7 +33,7 @@ export class HomeComponent {
     addToCart(event:any){
       if("cart" in localStorage){
         this.cartProducts=JSON.parse(localStorage.getItem("cart")!)
-        let exist=this.cartProducts.find(item=>item.id==event.id)
+        let exist=this.cartProducts.find(item=>item._id==event._id)
         if(exist){
           alert("Product already exist!!")
         }else{
