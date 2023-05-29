@@ -1,3 +1,4 @@
+import { User } from 'src/app/shared/models/User';
 
 import { Injectable } from '@angular/core';
 import { Service } from '../shared/models/Service';
@@ -67,5 +68,32 @@ export class ServiceService {
       })
     )
 
+  }
+
+  addtoCart(myService:Observable<Service>,user:User):Observable<Service>{
+    let cart:any[]=[]
+    user.cart.push(myService)
+    let newUserUpdate = user
+    newUserUpdate.cart.push(myService)
+
+    localStorage.setItem("cart",JSON.stringify(cart))
+    return this.http.put<Service>(SERVICES_URL,myService).pipe(
+      tap({
+        next:(myService)=>{
+            this.toastrService.success(
+              `Service ${myService.name} updated successfully `,
+              ` success :)`,
+              {positionClass: 'toast-top-left'}
+            )
+        },
+        error:(errorResponse)=>{
+          this.toastrService.error(
+            errorResponse.error,
+            `failed to update Service :(`,
+            {positionClass: 'toast-top-left'}
+          )
+        }
+      })
+    )
   }
 }

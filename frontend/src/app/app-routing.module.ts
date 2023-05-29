@@ -6,6 +6,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { NewServicePostComponent } from './components/pages/new-service-post/new-service-post.component';
 import { EditServiceComponent } from './components/pages/edit-service/edit-service.component';
 
+import { CartsComponent } from './components/carts/carts.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -13,8 +14,8 @@ const routes: Routes = [
   {path:'service/:serviceId',component:ServiceComponent},
   {path:'login',component:LoginPageComponent},
   {path:'services/new',component:NewServicePostComponent},
-  {path:'service/edit',component:EditServiceComponent}
-
+  {path:'service/edit',component:EditServiceComponent},
+  {path:'carts',component:CartsComponent}
 ];
 
 @NgModule({
