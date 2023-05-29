@@ -3,6 +3,8 @@ import { UserService } from './../../../services/user.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/User';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { RegistrationDialogComponent } from '../../dialogs/registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +18,12 @@ export class HeaderComponent implements OnInit{
 
   searchTerm='';
   user!:User;
-  constructor(activatedRoute:ActivatedRoute,private router:Router,private userService:UserService){
-
+  
+  constructor(activatedRoute:ActivatedRoute,
+    private router:Router,
+    private userService:UserService,
+    public dialog: MatDialog
+    ){
     activatedRoute.params.subscribe((params)=>{
       if (params.searchTerm) {
         this.searchTerm  = params.searchTerm;
@@ -61,7 +67,7 @@ export class HeaderComponent implements OnInit{
 
 changeColor() {
   const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
-  navbar!.style.backgroundColor = "#418A00"; // Change the background color to red
+  navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
 }
 
 @Input() name: string = '';
@@ -83,6 +89,28 @@ onScrollEvent(event: Event) {
     isLoginPageActive(){
       return this.router.url.includes('login')||this.router.url.includes('services/new');
     }
+      isHomePageActive(){
+      return this.router.url==='/';
+      }
+      openDialog(): void {
+
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+        dialogConfig.width = '260px';
+        dialogConfig.height = '470px';
+        dialogConfig.position = {
+          'top': '100px',
+          'right': '200px'
+        };
+
+        
+        const dialogRef = this.dialog.open(RegistrationDialogComponent,dialogConfig); 
+        dialogRef.afterClosed().subscribe(result => {
+              console.log('The dialog was closed');
+            });
+      }
+
 
  }
 

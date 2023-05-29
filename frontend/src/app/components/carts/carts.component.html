@@ -1,0 +1,57 @@
+<div class="container">
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  
+    <div class="cartBox">
+        <div class="text-center">
+            <h1 class="text-danger">Shopping Cart</h1>
+        </div>
+      <div class="headCart">
+        <p class="lead">You have <label class="text-danger ">{{cartService.length}}</label> item in your cart</p>
+        <span class="text-danger card-header" (click)="clearProducts()">Clear Shopping Cart</span>
+      </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartService; let index = index" >
+                    <td><img src="{{item. imgPath}}" alt=""></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}$</td>
+                    <td>
+                        {{item.description}}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteProduct(index)" >Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Total : {{total}}$</th>
+                    <th><button class="btn btn-success" (click)="addCart();a=true">Order Now</button></th>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+    <div class="text-center">
+        <app-snniper *ngIf="!success && a"></app-snniper>
+    </div>
+
+    <div class="alert alert-success" role="alert" *ngIf="success"><strong>Well done!</strong> Your Order is Successfully Send</div>
+
+</div>

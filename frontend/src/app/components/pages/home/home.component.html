@@ -1,50 +1,17 @@
 
 
+
 <div class = "products">
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
+  <p style="color:transparent;">.</p>
   <div class = "container">
-
-    <p style="color:transparent;">.</p>
-    <p style="color:transparent;">.</p>
-
-
-      <h1 class = "lg-title"><strong> Special Services Offers</strong></h1>
-
-      <div class = "product-items" >
-          <!-- single product -->
-
-          <div class = "product" *ngFor="let service of services">
-                <div class = "product-content">
-                    <a routerLink="/service/{{service._id}}">
-                    <div class = "product-img">
-                        <img src="{{ service.imgPath }}" alt="{{ service.name }}">
-                      </div>
-                    </a>
-
-                      <div class = "product-info">
-                        <div class = "product-info-top">
-                          <h2 class = "sm-title">{{service.name}}</h2>
-                          <div class = "rating">
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "fas fa-star"></i></span>
-                            <span><i class = "far fa-star"></i></span>
-                      </div>
-                      </div>
-                      <a href = "#" class = "product-name"> {{service.description}}</a>
-                      <p class = "product-price">$ {{service.price | number: '1.2-2' }}</p>
-                      <p class = "product-price">$ {{(service.price+10)  | number: '1.2-2' }}</p>
-                    </div>
-
-                    <div class = "product-btns">
-                      <button type = "button" class = "btn-cart"> add to List
-                          <span><i class = "fas fa-th-large"></i></span>
-                      </button>
-                      <button type = "button" class = "btn-buy"> add to favourite
-                          <span><i class = "fas fa-heart"></i></span>
-                      </button>
-                  </div>
-
-                  </div>
-
-
+    <h1 class = "lg-title">Special Services Offers</h1>
+    <div class = "product-items" >
+        <!-- single product -->
+      <div class = "product" *ngFor="let service of services">
+        <app-services [data]="service" (item)="addToCart($event)"></app-services>
+      </div>
+    </div>
+  </div>
+</div>

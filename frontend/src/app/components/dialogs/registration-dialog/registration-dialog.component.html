@@ -1,0 +1,37 @@
+
+
+<h2 mat-dialog-title><strong>Sign Up</strong></h2>
+
+<mat-dialog-content [formGroup]="NewUserForm">
+  <p>
+    <mat-form-field>
+    <input matInput
+           type="text"
+            placeholder="enter your Name"
+           formControlName="name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput
+            type="email"
+              placeholder="enter your Email"
+             formControlName="email">
+  </mat-form-field>
+  </p>
+  <p><mat-form-field>
+    <input matInput
+            type="password"              
+            placeholder="password"
+           formControlName="password">
+ </mat-form-field>
+</p>
+
+    
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-fab color="warn"  (click)="close()">Close</button>
+    <button mat-fab color="primary" (click)="save()">Save</button>
+</mat-dialog-actions>

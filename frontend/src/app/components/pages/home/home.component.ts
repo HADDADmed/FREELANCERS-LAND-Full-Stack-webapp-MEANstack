@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent {
 
+     cartProducts:any[]=[]
      services:Service[]=[];
      constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
 
@@ -22,15 +23,27 @@ export class HomeComponent {
         else{
            servicesObservable = this.serviceService.getAll();
         }
-        servicesObservable.subscribe((r) => {
-              this.services= r;
+
+        servicesObservable.subscribe((serverService) => {
+              this.services= serverService;
+              console.log(this.services)
         })
       })
+    }
+    addToCart(event:any){
+      if("cart" in localStorage){
+        this.cartProducts=JSON.parse(localStorage.getItem("cart")!)
+        let exist=this.cartProducts.find(item=>item._id==event._id)
+        if(exist){
+          alert("Product already exist!!")
+        }else{
+          this.cartProducts.push(event)
+          localStorage.setItem("cart",JSON.stringify(this.cartProducts))
+          console.log(this.cartProducts)
+        }
+      }else{
+        this.cartProducts.push(event)
+        localStorage.setItem("cart",JSON.stringify(this.cartProducts))
+      }
 
-
-
-
-
-
-     }
-}
+    }}
