@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit{
 
   searchTerm='';
   user!:User;
-  
+
   constructor(activatedRoute:ActivatedRoute,
     private router:Router,
     private userService:UserService,
@@ -66,6 +66,7 @@ export class HeaderComponent implements OnInit{
    // Add the following code to your component or script
 
 changeColor() {
+  
   const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
   navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
 }
@@ -89,9 +90,7 @@ onScrollEvent(event: Event) {
     isLoginPageActive(){
       return this.router.url.includes('login')||this.router.url.includes('services/new');
     }
-      isHomePageActive(){
-      return this.router.url==='/';
-      }
+
       openDialog(): void {
 
         const dialogConfig = new MatDialogConfig();
@@ -104,14 +103,19 @@ onScrollEvent(event: Event) {
           'right': '200px'
         };
 
-        
-        const dialogRef = this.dialog.open(RegistrationDialogComponent,dialogConfig); 
+
+        const dialogRef = this.dialog.open(RegistrationDialogComponent,dialogConfig);
         dialogRef.afterClosed().subscribe(result => {
               console.log('The dialog was closed');
             });
       }
 
 
+    isHomePageActif(): boolean {
+      const currentUrl = this.router.url;
+      const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+      return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
+    }
  }
 
 

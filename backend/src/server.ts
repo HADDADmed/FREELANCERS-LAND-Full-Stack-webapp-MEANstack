@@ -27,8 +27,8 @@ app.use('/api/users',userRouter);
 
 
 
-app.listen(5000,()=>{
-    console.log("server backend r listning to port  5000");
+app.listen(65530,()=>{
+    console.log("server backend r listning to port  65530");
 })
 
 

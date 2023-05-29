@@ -12,4 +12,10 @@ export class FooterComponent {
   navigateTo(route: string) {
     this.router.navigateByUrl(route);
   }
+  isHomePageActif(): boolean {
+    const currentUrl = this.router.url;
+    const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+
+    return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
+  }
 }

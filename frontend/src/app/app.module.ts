@@ -25,8 +25,8 @@ import { ServicesComponent } from './components/pages/services/services.componen
 import { RegistrationDialogComponent } from './components/dialogs/registration-dialog/registration-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
-
-
+import { PrimaryPageComponent } from './components/pages/primary-page/primary-page.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 
 @NgModule({
@@ -44,8 +44,8 @@ import {MatDividerModule} from '@angular/material/divider';
     ServicesComponent,
     CartsComponent,
     RegistrationDialogComponent,
-
-
+    PrimaryPageComponent,
+    FavoriteComponent,
   ],
   imports: [
     FormsModule,
@@ -65,7 +65,6 @@ import {MatDividerModule} from '@angular/material/divider';
       timeOut:3000,
       newestOnTop:false,
     }),
-
   ],
   providers: [],
   bootstrap: [AppComponent]

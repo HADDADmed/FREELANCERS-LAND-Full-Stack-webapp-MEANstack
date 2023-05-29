@@ -1,5 +1,5 @@
 <header>
-  <div class="navbar-container">
+  <div class="navbar-container" *ngIf="isHomePageActif()">
        <div id="navbar1">
                   <div id="Logo">
                 <li >
@@ -27,7 +27,7 @@
                             <a href="#">Account</a>
                             <a routerLink="/services/new">Add service</a>
                             <a href="#">My Services</a>
-                            <a href="#">My orders</a>
+                            <a routerLink="/favorite">My favorites</a>
                             <a routerLink="/carts">Dashboard</a>
                             <a href="#">Setting</a>
                             <a  (click)="logout()">Logout</a>
@@ -40,8 +40,8 @@
                           </button>
                           <div class="dropdown-options">
                             <a (click)="openDialog()">Sign up</a>
-                          
-                           
+
+
                           </div>
                         </div>
 
@@ -51,7 +51,7 @@
         <div id="navbar2" *ngIf="isActive() && !isLoginPageActive()"  >
               <ul>
 
-                <li>  <a  routerLink="/"><strong>Homme Page</strong></a> </li>
+                <li>  <a  routerLink="/home"><strong>Home Page</strong></a> </li>
                 <li>  <a  routerLink="/1" ><strong>(Link Test1)</strong></a> </li>
                 <li>  <a  routerLink="/2"><strong>(Link Test2)</strong></a> </li>
                 <li>  <a  routerLink="/3" ><strong>(Link Test3)</strong></a> </li>

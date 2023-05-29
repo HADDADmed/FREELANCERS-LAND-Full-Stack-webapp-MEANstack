@@ -12,11 +12,11 @@
                                       <img [src]="service.imgPath" [alt]="service.name"  id="product-main-image">
                                   </div>
                                   <div class="product-image-slider">
-                                      <img src="ServiceImges/pngwing.com (1).png" [alt]="service.name" class="image-list">
-                                      <img src="ServiceImges/sailing-ship-g3fce10d75_1920.jpg" [alt]="service.name"  class="image-list">
-                                      <img src="ServiceImges/still-life-g24986429f_1920.jpg" [alt]="service.name"  class="image-list">
-                                      <img src="ServiceImges/pngwing.com (2).png" [alt]="service.name"  class="image-list">
-                                      <img src="ServiceImges/pngwing.com (2).png" [alt]="service.name"  class="image-list">
+                                      <img src="{{service.imgPath}}" [alt]="service.name" class="image-list">
+                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
+                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
+                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
+                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
 
                                   </div>
                               </div>
@@ -79,11 +79,14 @@
                                 <label for="blue" class="blue"></label>
                             </div>
                         </div>-->
+                        
+
+
                         <span class="divider"></span>
 
                         <div class="product-btn-group">
                             <div class="button buy-now"><i class='bx bxs-zap' ></i> Buy Now</div>
-                            <div class="button add-cart"><i class='bx bxs-cart' ></i> Add to Cart</div>
+                            <button type = "button" class="button add-cart" (click)="addToCart(service)"><i class='bx bxs-cart' ></i> add to List</button>
                             <div class="button heart"><i class='bx bxs-heart' ></i> Add to Wishlist</div>
                         </div>
                     </div>

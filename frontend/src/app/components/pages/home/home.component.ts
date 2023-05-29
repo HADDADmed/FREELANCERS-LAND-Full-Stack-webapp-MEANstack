@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
 
      cartProducts:any[]=[]
+     favoriteProducts:any[]=[]
      services:Service[]=[];
      constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
 
@@ -35,7 +36,7 @@ export class HomeComponent {
         this.cartProducts=JSON.parse(localStorage.getItem("cart")!)
         let exist=this.cartProducts.find(item=>item._id==event._id)
         if(exist){
-          alert("Product already exist!!")
+          alert("Service already exist!!")
         }else{
           this.cartProducts.push(event)
           localStorage.setItem("cart",JSON.stringify(this.cartProducts))
@@ -46,4 +47,22 @@ export class HomeComponent {
         localStorage.setItem("cart",JSON.stringify(this.cartProducts))
       }
 
-    }}
+    }
+    addTofavorite(event:any){
+      if("favorite" in localStorage){
+        this.favoriteProducts=JSON.parse(localStorage.getItem("favorite")!)
+        let exist=this.favoriteProducts.find(item=>item._id==event._id)
+        if(exist){
+          alert("already in your favorite page!!")
+        }else{
+          this.favoriteProducts.push(event)
+          localStorage.setItem("favorite",JSON.stringify(this.favoriteProducts))
+          console.log(this.favoriteProducts)
+        }
+      }else{
+        this.favoriteProducts.push(event)
+        localStorage.setItem("favorite",JSON.stringify(this.favoriteProducts))
+      }
+
+    }
+  }

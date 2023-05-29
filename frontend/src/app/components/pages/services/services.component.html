@@ -14,7 +14,7 @@
           <span><i class = "far fa-star"></i></span>
         </div>
       </div>
-      <a href = "#" class = "product-name"> {{data.name}}</a>
+      <a href = "#" class = "product-name" style="font-weight: bold;"> {{data.name}}</a>
       <p class = "product-price">$ {{data.price | number: '1.2-2' }}</p>
       <p class = "product-price">$ {{data.price+10  | number: '1.2-2' }}</p>
     </div>
@@ -22,7 +22,7 @@
       <button type = "button" class = "btn-cart" (click)="add()"> add to List
         <span><i class = "fas fa-th-large"></i></span>
       </button>
-      <button type = "button" class = "btn-buy"> add to favourite
+      <button type = "button" class = "btn-buy" (click)="addf()"> add to favourite
           <span><i class = "fas fa-heart"></i></span>
       </button>
     </div>

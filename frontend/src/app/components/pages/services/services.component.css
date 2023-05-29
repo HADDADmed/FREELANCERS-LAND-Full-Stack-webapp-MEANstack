@@ -122,10 +122,10 @@ img{
   background: white;
   padding: 0.3rem; /* Réduire le padding pour l'élément d'information du produit */
   margin-top: 5rem; /* Ajouter une marge supérieure pour éloigner l'élément d'information du produit des boutons */
+  overflow:hidden;
   text-overflow: ellipsis;
-  overflow: hidden;
-  height: 120px;
-  width: 200px;
+  height:120px;
+  width:200px;
 }
 .product-info-top{
     display: flex;
