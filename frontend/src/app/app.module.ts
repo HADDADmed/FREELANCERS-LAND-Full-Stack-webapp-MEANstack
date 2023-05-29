@@ -23,6 +23,8 @@ import { UserServicesComponent } from './components/pages/user-services/user-ser
 import { CartsComponent } from './components/carts/carts.component';
 import { SnniperComponent } from './components/partials/snniper/snniper.component';
 import { ServicesComponent } from './components/pages/services/services.component';
+import { PrimaryPageComponent } from './components/pages/primary-page/primary-page.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 
 @NgModule({
@@ -40,8 +42,8 @@ import { ServicesComponent } from './components/pages/services/services.componen
     SnniperComponent,
     ServicesComponent,
     CartsComponent,
-
-
+    PrimaryPageComponent,
+    FavoriteComponent,
   ],
   imports: [
     FormsModule,
@@ -53,13 +55,11 @@ import { ServicesComponent } from './components/pages/services/services.componen
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    MatInputModule,
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right',
       timeOut:3000,
       newestOnTop:false,
     }),
-
   ],
   providers: [],
   bootstrap: [AppComponent]

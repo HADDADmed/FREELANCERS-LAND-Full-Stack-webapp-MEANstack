@@ -83,7 +83,12 @@ onScrollEvent(event: Event) {
     isLoginPageActive(){
       return this.router.url.includes('login')||this.router.url.includes('services/new');
     }
-
+    isHomePageActif(): boolean {
+      const currentUrl = this.router.url;
+      const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+  
+      return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
+    }
  }
 
 

@@ -8,7 +8,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ServicesComponent {
   @Input() data:any={}
   @Output() item=new EventEmitter()
+  @Output() itemf=new EventEmitter()
   add(){
     this.item.emit(this.data)
+  }
+  addf(){
+    this.itemf.emit(this.data)
   }
 }
