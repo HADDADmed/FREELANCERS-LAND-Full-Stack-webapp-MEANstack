@@ -114,7 +114,7 @@ onScrollEvent(event: Event) {
 
     isHomePageActif(): boolean {
       const currentUrl = this.router.url;
-      const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+      const urlFragments = ['/','/account', '#service', '#portfolio', '#pricing', '#about', '#contact'];
       return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
     }
  }
