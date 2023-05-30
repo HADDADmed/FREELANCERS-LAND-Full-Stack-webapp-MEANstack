@@ -10,6 +10,7 @@ import { CartsComponent } from './components/carts/carts.component';
 import { PrimaryPageComponent } from './components/pages/primary-page/primary-page.component';
 import { combineLatest } from 'rxjs';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { AcountComponent } from './components/acount/acount.component';
 
 const routes: Routes = [
   {path:'',component:PrimaryPageComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'service/edit',component:EditServiceComponent},
   {path:'carts',component:CartsComponent},
   {path:'favorite',component:FavoriteComponent},
+  {path:'account',component:AcountComponent},
   {path:"**",redirectTo:"",pathMatch:"full"}
 ];
 

@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,18 +11,14 @@ export class AppComponent {
   title = 'FirstP';
 
 
-  constructor(private el: ElementRef) {
+  constructor(private el: ElementRef,
+    private activatedRoute:ActivatedRoute,
+    private router:Router,) {}
 
+  isHomePageActif(): boolean {
+    const currentUrl = this.router.url;
+    const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+    return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
   }
-
-  scrollDown(){
-    var container = this.el.nativeElement.querySelector("#chat");
-      container.style = "color: red; background-color: blue;"
-    console.log(container.scrollTop)
-    console.log(container.scrollHeight)
-    container.scrollTop = container.scrollHeight;
-    console.log(container.scrollTop)
-  }
-
 
 }

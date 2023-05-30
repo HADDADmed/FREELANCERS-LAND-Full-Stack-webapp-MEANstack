@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
 import { ScrollDirective } from './scroll.directive';
-import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { NewServicePostComponent } from './components/pages/new-service-post/new-service-post.component';
 import { EditServiceComponent } from './components/pages/edit-service/edit-service.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -23,8 +22,12 @@ import { UserServicesComponent } from './components/pages/user-services/user-ser
 import { CartsComponent } from './components/carts/carts.component';
 import { SnniperComponent } from './components/partials/snniper/snniper.component';
 import { ServicesComponent } from './components/pages/services/services.component';
+import { RegistrationDialogComponent } from './components/dialogs/registration-dialog/registration-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
 import { PrimaryPageComponent } from './components/pages/primary-page/primary-page.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { AcountComponent } from './components/acount/acount.component';
 
 
 @NgModule({
@@ -36,14 +39,15 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     ServiceComponent,
     LoginPageComponent,
    ScrollDirective,
-   RegistrationComponent,
    EditServiceComponent,
     UserServicesComponent,
     SnniperComponent,
     ServicesComponent,
     CartsComponent,
+    RegistrationDialogComponent,
     PrimaryPageComponent,
     FavoriteComponent,
+    AcountComponent,
   ],
   imports: [
     FormsModule,
@@ -55,6 +59,9 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatDialogModule,
+    MatDividerModule,
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right',
       timeOut:3000,

@@ -66,7 +66,7 @@ export class NewServicePostComponent {
         if(this.NewServiceForm.invalid) return;
 
         this.myService = {
-          
+
           name:this.fc.name.value,
           description:this.fc.description.value,
           price:this.fc.price.value,
@@ -78,8 +78,5 @@ export class NewServicePostComponent {
             this.router.navigateByUrl('/')
           }
         )
-
-
-
 }
 }

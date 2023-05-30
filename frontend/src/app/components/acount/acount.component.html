@@ -1,0 +1,44 @@
+<div *ngIf="!isEditing; else editingView">
+    <ul class="custom-list">
+      <li><strong>Name:</strong>{{data.name}}</li>
+      <li>
+        <strong>Password:</strong>
+        <span class="password-display">
+          <ng-container *ngIf="passwordVisible; else asterisks">{{ data.password }}</ng-container>
+          <ng-template #asterisks>{{ '*'.repeat(data.password.length) }}</ng-template>
+        </span>
+        <button (click)="togglePasswordVisibility()" class="eye-button">
+          <i class="fa-solid" [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
+        </button>
+      </li>
+      <li><strong>Email:</strong>{{data.email}}</li>
+      <li><strong>Address:</strong>{{data.address}}</li>
+    </ul>
+    <strong style="margin-left:10px" (click)="enableEditing()">Edit   <i class="fa-solid fa-pen-to-square"></i></strong>
+  </div>
+  
+  <ng-template #editingView>
+    <div class="editing-frame">
+      <h3>Edit Account Information</h3>
+      <form (submit)="saveEditedData()">
+        <label>
+          Name:
+          <input type="text" [(ngModel)]="editedData.name" required>
+        </label>
+        <br>
+        <label>
+          Password:
+          <input type="password" [(ngModel)]="editedData.password" required>
+        </label>
+        <label>
+          Email:
+          <input type="email" [(ngModel)]="editedData.email" required>
+        </label>
+        <label>
+          Address:
+          <input type="text" [(ngModel)]="editedData.address" required>
+        </label>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </ng-template>
