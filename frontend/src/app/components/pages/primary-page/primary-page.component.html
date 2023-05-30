@@ -46,14 +46,14 @@
                 <h2>Hello World!<br>
                     I'm Ziad Ben Saada Make Design
                 </h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et,porttitor 
-                        at sem. Mauris blandit aliquet elit, eget tincidunt 
-                        nibh pulvinar a. Curabitur  aliquet quam. Accumsan 
-                        id imperdiet et, porttitor at sem. Mauris blandit 
+                <p>Curabitur arcu erat, accumsan id imperdiet et,porttitor
+                        at sem. Mauris blandit aliquet elit, eget tincidunt
+                        nibh pulvinar a. Curabitur  aliquet quam. Accumsan
+                        id imperdiet et, porttitor at sem. Mauris blandit
                         aliquet elit, eget tincidunt.
                 </p>
             </div>
-        </div>  
+        </div>
         <i class="fas fa-angle-left change-background fa-2x"></i>
         <i class="fas fa-angle-right change-background fa-2x"></i>
         <ul class="bullets">
@@ -77,20 +77,20 @@
                     <div class="srv">
                          <i class="fa-solid fa-wand-magic-sparkles fa-3x"></i>
                         <div class="text">
-                            <h3>Editing</h3>
-                                <p>Welcome to our professional editing service! We specialize in enhancing 
-                                    your written content to ensure clarity, coherence, and impeccable grammar.
-                                     Let us transform your work into a polished piece that captivates your readers.
+                            <h3>Vorem amet intuitive</h3>
+                                <p>Curabitur arcu erat, accumsan id imperdiet et, 
+                                porttitor at sem. Mauris blandit aliquet elit,
+                                     eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
                             </p>
                         </div>
                     </div>
                     <div class="srv">
                         <i class="fa-solid fa-code fa-3x"></i>
                         <div class="text">
-                            <h3>Developpement</h3>
-                            <p>Looking for a reliable web developer? Look no further! Our expert team 
-                                offers top-notch web development services, leveraging the latest technologies
-                                 to deliver sleek and user-friendly websites that will leave a lasting impression on your visitors.
+                            <h3>Vorem amet intuitive</h3>
+                            <p>Curabitur arcu erat, accumsan id imperdiet et, 
+                                porttitor at sem. Mauris blandit aliquet elit,
+                                eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
                             </p>
                         </div>
                     </div>
@@ -99,20 +99,20 @@
                     <div class="srv">
                         <i class="fas fa-cog fa-3x"></i>
                         <div class="text">
-                            <h3>Hacking</h3>
-                            <p>Unlock the secrets of ethical hacking and become a cybersecurity professional. 
-                                Our in-depth course provides a deep understanding of penetration testing, vulnerability assessment,
-                                 and secure coding practices. Join us on this exciting journey to defend against cyber threats.
+                            <h3>Vorem amet intuitive</h3>
+                            <p>Curabitur arcu erat, accumsan id imperdiet et, 
+                                porttitor at sem. Mauris blandit aliquet elit,
+                                 eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
                             </p>
                         </div>
                     </div>
                     <div class="srv">
                         <i class="fas fa-camera fa-3x"></i>
                         <div class="text">
-                            <h3>Iptv</h3>
-                            <p>Welcome to our IPTV service, where entertainment meets convenience. Enjoy a vast selection 
-                                of channels and on-demand content delivered directly to your screen, providing you with a 
-                                seamless streaming experience like never before
+                            <h3>Vorem amet intuitive</h3>
+                            <p>Curabitur arcu erat, accumsan id imperdiet et, 
+                                porttitor at sem. Mauris blandit aliquet elit,
+                                 eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
                             </p>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
         <div class="container">
             <div class="main-heading">
                 <h2>About Us</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
             </div>
@@ -227,6 +227,20 @@
         </div>
     </div>
     <!-- End About -->
+
+    <div class = "">
+      <h1 class = "lg-title">Special Services Offers</h1>
+      <div class = "product-items" >
+          <!-- single product -->
+        <div class = "product" *ngFor="let service of services">
+          <app-services [data]="service" (itemf)="addTofavorite($event)" (item)="addToCart($event)"></app-services>
+        </div>
+      </div>
+    </div>
+      <div class="mt-4" style="color:transparent;">-</div>
+      <div class="mt-4" style="color:transparent;">-</div>
+      <div class="mt-4" style="color:transparent;">-</div>
+
     <!-- Start Statistique -->
     <div class="statistique">
         <div class="container">
@@ -258,13 +272,13 @@
         <div class="container">
             <div class="testimonials">
                 <h3>Testimonials</h3>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
                 <div class="content">
                     <img src="../../../../assets/images/skills-01.jpg" alt="">
                     <div class="text">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                         Mauris blandit aliquet elit, eget tincidunt.
                         <p>Ziad Ben Saada, Morocco</p>
                     </div>
@@ -272,7 +286,7 @@
                 <div class="content">
                     <img src="../../../../assets/images/skills-02.jpg" alt="">
                     <div class="text">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                         Mauris blandit aliquet elit, eget tincidunt.
                         <p>Ziad Ben Saada, Morocco</p>
                     </div>
@@ -285,7 +299,7 @@
             </div>
             <div class="skills">
                 <h3>Skills</h3>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
                 <div class="prog-holder">
@@ -317,7 +331,7 @@
     <!-- Start Quote -->
     <div class="quote">
         <div class="container">
-            <q>accumsan id imperdiet et, porttitor at sem. 
+            <q>accumsan id imperdiet et, porttitor at sem.
                 Mauris blandit aliquet elit, eget tincidunt.
             </q>
             <span>John Doe</span>
@@ -329,7 +343,7 @@
         <div class="container">
             <div class="main-heading">
                 <h2>PRICING</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
             </div>
@@ -401,7 +415,7 @@
                 <input type="email" name="Email" placeholder="Your Email">
                 <input type="submit" value="Subscribe">
             </form>
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                 Mauris blan dit aliquet elit, eget tincidunt.
             </p>
         </div>
@@ -412,8 +426,8 @@
         <div class="container">
             <div class="main-heading">
                 <h2>CONTACT US</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. 
-                    Mauris blandit aliquet elit, eget tincidunt.                
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                    Mauris blandit aliquet elit, eget tincidunt.
                 </p>
             </div>
             <div class="info">
@@ -452,7 +466,7 @@
             </div>
             <p>&copy; 2023 <span>Ziad</span> All Right Reserved</p>
         </div>
-        </div>  
+        </div>
     <!-- End Footer -->
 </body>
 </html>

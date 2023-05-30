@@ -35,7 +35,7 @@ export class CartsComponent implements OnInit{
   getServices(){
     if("cart" in localStorage){
       this.cartService=JSON.parse(localStorage.getItem("cart")!)
-    } 
+    }
     this.getTotal()
   }
   addAmount(index:number){
@@ -74,7 +74,7 @@ export class CartsComponent implements OnInit{
     setTimeout(() => {
       this.success=true
     }, 2000);
-    
+
   }
   clearProducts(){
     this.cartService=[]
@@ -82,7 +82,7 @@ export class CartsComponent implements OnInit{
     localStorage.setItem("cart",JSON.stringify(this.cartService))
   }
 }
-  
-    
-    
+
+
+
 

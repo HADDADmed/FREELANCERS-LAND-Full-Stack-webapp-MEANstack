@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##  Lessons
 1. Introduciton to the course
 2. Install development tools
@@ -231,8 +230,6 @@
     6.  Run ncu -u in the backend folder
     7.  Run npm install
     8.  Run npm start
-=======
 # ProjectFront
 
 #Using Angular and Node / express / and mongodb 
->>>>>>> b7cbb43b740f620b92b9766831eb55663f22f007
