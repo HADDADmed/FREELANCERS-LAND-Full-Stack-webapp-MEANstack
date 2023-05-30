@@ -30,6 +30,7 @@ export class EditServiceComponent {
       name:['',[Validators.required]],
       price:['',Validators.required],
       description:['',Validators.required],
+      category:['',Validators.required],
       imgPath:['',Validators.required]
 
     })
@@ -54,7 +55,10 @@ submit(){
       name:this.fc.name.value,
       description:this.fc.description.value,
       price:this.fc.price.value,
-      imgPath:this.fc.imgPath.value
+      imgPath:this.fc.imgPath.value,
+      category:this.fc.category.value,
+      userId:localStorage.getItem('user._id') || '',
+
     }
     this.serviceService.updateService(this.myService).subscribe(
       (data)=>{

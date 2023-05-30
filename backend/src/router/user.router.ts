@@ -8,8 +8,10 @@ import Service from "../models/services.model";
 const bcrypt = require("bcrypt")
 
 const router = Router();
-router.get('/',(request,response)=>{
-    response.send(sample_users);
+router.get('/',async (request,response)=>{
+   
+     const users = await User.find({});
+    response.send(users);
   })
 // router.post('/login',(request,response)=>{
 //     const {email,plainPassword} = request.body;
@@ -63,7 +65,7 @@ catch(error){
 
   router.post('/register',async (request,response)=>{
     const newUser = request.body;
-    const newUser1 = new User({name:newUser.name,email:newUser.email,password:newUser.password,cart:[]});
+    const newUser1 = new User({name:newUser.name,email:newUser.email,password:newUser.password,imgPath:newUser.imgPath});
     console.log("newUser1 :",newUser1);
     try{
         bcrypt.hash(newUser1.password, 10, async (err:any, hash:string) => {
@@ -80,31 +82,11 @@ catch(error){
         response.status(500).json({message:"error in getting data from database"});
     }
     
-  })
+  }) 
 
 /// add item to cart
-router.put('/addtocart/:UserId/:ServiceId',async (request,response)=>{
-  const {UserId,ServiceId} = request.params;
-  console.log("UserId",UserId);
-  console.log("ServiceId",ServiceId);
-  try{
-      const user = await User.findById(UserId);
-      const service = await Service.findById(ServiceId);
-      console.log("user",user);
-      console.log("service",service);
-      if (user && service) {
-        user.cart.push(service);
-        const data = await User.findByIdAndUpdate(UserId,user);
-        console.log("user was added susccessfuly ",data);
-        response.status(200).json(data);
-      }else{
-        response.status(400).json({message:"user or service not found"});
-      }
-  }
-  catch(error){
-      console.log("error in getting data from database",error);
-      response.status(500).json({message:"error in getting data from database"});
-  }})
+
+ 
 
 
 

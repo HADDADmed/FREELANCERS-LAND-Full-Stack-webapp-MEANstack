@@ -8,8 +8,7 @@ const userSchema = new mongoose.Schema({
     password : {type:String,required:true},
     isSeler : {type:Boolean,required:true,default:false},
     token : {type:String,required:false},
-    cart: { type:Array,required: true,Service:[]= [] }
-
+    imgPath : {type:String,required:false},
 });
 
 const User = mongoose.model('users',userSchema);

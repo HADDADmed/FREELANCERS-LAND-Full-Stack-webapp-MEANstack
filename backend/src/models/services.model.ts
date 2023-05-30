@@ -6,7 +6,8 @@ const  serviceSchema = new mongoose.Schema({
             price : {type:Number,required:true},
                 description : {type:String,required:true},
                   imgPath : {type:String,required:true},
-                  // category : {type:Category,required:false},
+                    category : {type:String,required:true},
+                    userId : {type:String,required:true},
   });
 const Service = mongoose.model('services',serviceSchema);
 
