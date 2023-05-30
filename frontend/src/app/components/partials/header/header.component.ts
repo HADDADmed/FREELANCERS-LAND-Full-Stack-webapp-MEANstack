@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit{
       this.user  = newUser;
     })
 
+
     this.scrolling = false;
 
 
@@ -66,7 +67,7 @@ export class HeaderComponent implements OnInit{
    // Add the following code to your component or script
 
 changeColor() {
-  
+
   const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
   navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
 }
@@ -97,9 +98,9 @@ onScrollEvent(event: Event) {
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
         dialogConfig.width = '260px';
-        dialogConfig.height = '470px';
+        dialogConfig.height = '520px';
         dialogConfig.position = {
-          'top': '100px',
+          'top': '95px',
           'right': '200px'
         };
 

@@ -21,7 +21,7 @@ export class RegistrationDialogComponent {
     email: '',
     password: '',
   };
-  
+
 
 
   constructor(
@@ -34,17 +34,18 @@ export class RegistrationDialogComponent {
           name:'',
           email: '',
           password: '',
-        
+
         }; }
 
-  
+
 
   ngOnInit() {
       this.NewUserForm = this.formBuilder.group({
         name:['',Validators.required],
         email:['',[Validators.required,Validators.email]],
         password:['',Validators.required],
-        
+        imgPath:['',Validators.required]  
+
       })
 
   }
@@ -55,18 +56,19 @@ export class RegistrationDialogComponent {
   save() {
     this.isSubmitted = true;
     if (this.NewUserForm.invalid) return;
-  
-    this.NewUser = {  
+
+    this.NewUser = {
       _id:'',
       name:this.fc.name.value,
       email:this.fc.email.value,
       password:this.fc.password.value,
+      imgPath:this.fc.imgPath.value,
       token:''
     }
 
     console.log(this.NewUser);
-    
-    this.userService.register({  
+
+    this.userService.register({
       _id:'',
       name:this.fc.name.value,
       email:this.fc.email.value,
@@ -74,11 +76,11 @@ export class RegistrationDialogComponent {
       token:''
     }).subscribe(() => {
       console.log("send to user service");
-      
+
     });
     this.dialogRef.close(this.NewUserForm.value);
   }
-  
+
 
   // Set properties of NewUser
   // this.NewUser.name = this.NewUserForm.controls.name.value;

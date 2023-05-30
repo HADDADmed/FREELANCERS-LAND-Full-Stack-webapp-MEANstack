@@ -27,6 +27,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import { PrimaryPageComponent } from './components/pages/primary-page/primary-page.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { RegistrationComponent } from './components/pages/registration/registration.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     RegistrationDialogComponent,
     PrimaryPageComponent,
     FavoriteComponent,
+    RegistrationComponent,
   ],
   imports: [
     FormsModule,

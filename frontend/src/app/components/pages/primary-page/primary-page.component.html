@@ -17,7 +17,7 @@
             <div id="Logo">
                 <li >
                     <a  routerLink="/">
-                        <img src="assets/images/navbarImgs/pngegg.png"  alt="Logo" style="height: 90px;">
+                        <img src="assets/images/navbarImgs/FREELACERS_LAND_LOGO3.png"  alt="Logo" style="height: 60px;">
                     </a>
                 </li>
             </div>
@@ -26,10 +26,35 @@
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="/home">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#portfolio">Design</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li>
+                      <div class="dropdown"  *ngIf="isAuthenticated()">
+                        <button id="DropDown">
+                            <img src={{user.imgPath}} style="height: 50px; border-radius: 50%;" alt="Account">
+                        </button>
+                        <div class="dropdown-options">
+                          <a  id="DropDown" href="#">Account</a>
+                          <a  id="DropDown" routerLink="/services/new">Add service</a>
+                          <a  id="DropDown"  href="#">My Services</a>
+                          <a   id="DropDown" routerLink="/favorite">My favorites</a>
+                          <a  id="DropDown" routerLink="/carts">Dashboard</a>
+                          <a  id="DropDown" href="#">Setting</a>
+                          <a   id="DropDown" (click)="logout()">Logout</a>
+                        </div>
+                      </div>
+                      <div class="dropdown"  *ngIf="!isAuthenticated()">
+                        <button id="DropDown" routerLink="/login" >
+                            <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px; border-radius: 50%;" alt="Account">
+                        </button>
+                        <div class="dropdown-options">
+                          <a (click)="openDialog()">Sign up</a>
+                        </div>
+                      </div>
+
+            </li>
                 </ul>
                 <div class="form">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -43,15 +68,20 @@
         <div class="overlay"></div>
         <div class="text">
             <div class="content">
-                <h2>Hello World!<br>
-                    I'm Ziad Ben Saada Make Design
-                </h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et,porttitor
-                        at sem. Mauris blandit aliquet elit, eget tincidunt
-                        nibh pulvinar a. Curabitur  aliquet quam. Accumsan
-                        id imperdiet et, porttitor at sem. Mauris blandit
-                        aliquet elit, eget tincidunt.
-                </p>
+                <h2>Find the right <span  style="font-size: 50px; font-family: Brush Script MT;" >freelance service</span>, right away</h2>
+              <label id="serchBar">
+                <input type="text" id="serchBar" required>
+                <button id="serchBar" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                <ul id="serchBar">
+                  <li id="serchBar" s>s</li>
+                  <li id="serchBar" e>e</li>
+                  <li id="serchBar"  a>a</li>
+                  <li id="serchBar" r>r</li>
+                  <li id="serchBar" c>c</li>
+                  <li id="serchBar" h>h</li>
+                </ul>
+              </label>
             </div>
         </div>
         <i class="fas fa-angle-left change-background fa-2x"></i>
@@ -68,29 +98,31 @@
         <div class="container">
             <div class="main-heading">
                 <h2>SERVICES</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                 Mauris blandit aliquet elit, eget tincidunt.
+                <p>Our Services For You.
+                    Request Now!
                 </p>
             </div>
             <div class="content">
                 <div class="col">
                     <div class="srv">
-                         <i class="fas fa-desktop fa-3x"></i>
+                         <i class="fa-solid fa-wand-magic-sparkles fa-3x"></i>
                         <div class="text">
-                            <h3>Vorem amet intuitive</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Mauris blandit aliquet elit,
-                                     eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                            <h3>Editing</h3>
+                                <p>Welcome to [Your Freelance Website Name], your one-stop destination for connecting with talented freelancers and getting your projects done efficiently.
+
+                                  At [Your Freelance Website Name], we understand the power of collaboration and the need for flexible work arrangements. That's why we have created a platform that brings together skilled freelancers from various fields and clients looking for their expertise.
+
+                                  Our mission is to empower both freelancers and businesses by providing a reliable and secure platform that facilitates seamless project collaboration. Whether you need a graphic designer, web developer, writer, or any other specialized professional, we've got you covered
                             </p>
                         </div>
                     </div>
                     <div class="srv">
-                        <i class="fas fa-pencil-ruler fa-3x"></i>
+                        <i class="fa-solid fa-code fa-3x"></i>
                         <div class="text">
-                            <h3>Vorem amet intuitive</h3>
-                            <p>Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Mauris blandit aliquet elit,
-                                eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                            <h3>Developpement</h3>
+                            <p>Looking for a reliable web developer? Look no further! Our expert team
+                                offers top-notch web development services, leveraging the latest technologies
+                                 to deliver sleek and user-friendly websites that will leave a lasting impression on your visitors.
                             </p>
                         </div>
                     </div>
@@ -99,20 +131,20 @@
                     <div class="srv">
                         <i class="fas fa-cog fa-3x"></i>
                         <div class="text">
-                            <h3>Vorem amet intuitive</h3>
-                            <p>Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Mauris blandit aliquet elit,
-                                 eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                            <h3>Hacking</h3>
+                            <p>Unlock the secrets of ethical hacking and become a cybersecurity professional.
+                                Our in-depth course provides a deep understanding of penetration testing, vulnerability assessment,
+                                 and secure coding practices. Join us on this exciting journey to defend against cyber threats.
                             </p>
                         </div>
                     </div>
                     <div class="srv">
                         <i class="fas fa-camera fa-3x"></i>
                         <div class="text">
-                            <h3>Vorem amet intuitive</h3>
-                            <p>Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Mauris blandit aliquet elit,
-                                 eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                            <h3>Iptv</h3>
+                            <p>Welcome to our IPTV service, where entertainment meets convenience. Enjoy a vast selection
+                                of channels and on-demand content delivered directly to your screen, providing you with a
+                                seamless streaming experience like never before
                             </p>
                         </div>
                     </div>
@@ -142,9 +174,8 @@
     <div class="portfolio" id="portfolio">
         <div class="container">
             <div class="main-heading">
-                <h2>PORTFOLIO</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                    Mauris blandit aliquet elit, eget tincidunt.
+                <h2>Images Services</h2>
+                <p>What image do you like?All
                 </p>
             </div>
             <ul class="shuffle">
@@ -213,28 +244,18 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="more">More</a>
     </div>
     <!-- End Portfolio -->
-    <!-- Start Video -->
-    <div class="video">
-        <video  autoplay muted loop>
-        <source src="../../../../assets/images/Video.mp4" type="video/mp4">
-    </video>
-    <div class="text">
-        <h2>SUPER AWESOME VIDEO HERE</h2>
-        <p>Its All You Need</p>
-        <button>SEE MORE</button>
-    </div>
-    </div>
-    <!-- End Video -->
     <!-- Start About -->
     <div class="about" id="about">
         <div class="container">
             <div class="main-heading">
                 <h2>About Us</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                    Mauris blandit aliquet elit, eget tincidunt.
+                <p> Welcome to <strong>FREELANCERS-LAND</strong>, your one-stop destination for connecting with talented freelancers and getting your projects done efficiently.
+
+                  At <strong>FREELANCERS-LAND</strong>, we understand the power of collaboration and the need for flexible work arrangements. That's why we have created a platform that brings together skilled freelancers from various fields and clients looking for their expertise.
+
+                  Our mission is to empower both freelancers and businesses by providing a reliable and secure platform that facilitates seamless project collaboration. Whether you need a graphic designer, web developer, writer, or any other specialized professional, we've got you covered
                 </p>
             </div>
             <img src="../../../../assets/images/about.png" alt="">
@@ -290,19 +311,21 @@
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
                 <div class="content">
-                    <img src="../../../../assets/images/skills-01.jpg" alt="">
+                    <img src="../../../../assets/images/ourImages/ZiadPic.png" alt="">
                     <div class="text">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Mauris blandit aliquet elit, eget tincidunt.
-                        <p>Ziad Ben Saada, Morocco</p>
+                        Software eneneering from FSTTanger and a freelancer in <strong>FREELANCERS-LAND</strong> .
+                        design and develop websites and mobile applications.
+                         already hack the entire planet.
+                        <p>Ziad Ben Saada,Tanger , Morocco</p>
                     </div>
                 </div>
                 <div class="content">
-                    <img src="../../../../assets/images/skills-02.jpg" alt="">
+                    <img src="../../../../assets/images/ourImages/HADDADPic.JPG" alt="">
                     <div class="text">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Mauris blandit aliquet elit, eget tincidunt.
-                        <p>Ziad Ben Saada, Morocco</p>
+                      Software eneneering from FSTTanger and a freelancer in <strong>FREELANCERS-LAND</strong> .
+                      design and develop websites and mobile applications.
+                      Network expert .
+                        <p>Haddad Mohammed,Tanger , Morocco</p>
                     </div>
                 </div>
                 <ul class="bullets">
@@ -345,10 +368,9 @@
     <!-- Start Quote -->
     <div class="quote">
         <div class="container">
-            <q>accumsan id imperdiet et, porttitor at sem.
-                Mauris blandit aliquet elit, eget tincidunt.
+            <q>If future generations are to remember us more with gratitude than sorrow, we must achieve more than just the miracles of technology. We must also leave them a glimpse of the world as it was created, not just as it looked when we got through with it.
             </q>
-            <span>John Doe</span>
+            <span>Lyndon B. Johnson, Former President of the United States of America</span>
         </div>
     </div>
     <!-- End Quote -->
@@ -361,7 +383,7 @@
                     Mauris blandit aliquet elit, eget tincidunt.
                 </p>
             </div>
-            <div class="plans">
+            <div class="plans" >
                 <div class="plan">
                     <div class="head">
                         <h3>BASIC</h3>
@@ -401,19 +423,7 @@
                     </ul>
                     <a href="#">Buy Now</a>
                 </div>
-                <div class="plan">
-                    <div class="head">
-                        <h3>PLATINUM</h3>
-                        <span>49</span>
-                    </div>
-                    <ul>
-                        <li>Feature No 1</li>
-                        <li>Extra Feature</li>
-                        <li>Extra Feature No 2</li>
-                        <li>Feature</li>
-                    </ul>
-                    <a href="#">Buy Now</a>
-                </div>
+
             </div>
             <p>Contact us if you have special request</p>
             <a href="#">Contact Us</a>
@@ -429,8 +439,7 @@
                 <input type="email" name="Email" placeholder="Your Email">
                 <input type="submit" value="Subscribe">
             </form>
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                Mauris blan dit aliquet elit, eget tincidunt.
+            <p>you can easly join us by just addin your email and clicking on subscribe
             </p>
         </div>
     </div>
@@ -440,9 +449,6 @@
         <div class="container">
             <div class="main-heading">
                 <h2>CONTACT US</h2>
-                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                    Mauris blandit aliquet elit, eget tincidunt.
-                </p>
             </div>
             <div class="info">
                 <div class="content">
@@ -454,11 +460,11 @@
                     </form>
                     <div class="info">
                         <h4 class="text">GET IN TOUCH</h4>
-                        <span class="phone">+00 123.456.789</span>
-                        <span class="phone">+00 123.456.789</span>
+                        <span class="phone">+212 657451913</span>
+                        <span class="phone">+212 710164956</span>
                         <h4 class="text">WHERE WE ARE</h4>
                         <address>
-                            Awesome Address 17<br>New York, NYC<br>123-4567-890<br>USA
+                            Tanger<br>Morrocco
                         </address>
                     </div>
                 </div>
@@ -470,7 +476,6 @@
     <div class="footer">
         <div class="overlay"></div>
         <div class="container">
-            <img src="../../../../assets/images/logo.png" alt="">
             <p>We Are Social</p>
             <div class="social-icons">
                 <a routerLink="https://web.facebook.com/profile.php?id=100009470504630"><i class="fa-brands fa-facebook"></i></a>
@@ -478,7 +483,7 @@
                 <a href=""><i class="fa-solid fa-house-chimney"></i></a>
                 <a href=""><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <p>&copy; 2023 <span>Ziad</span> All Right Reserved</p>
+            <p>&copy; 2023 <span>Ziad Ben Saada & Haddad Med </span> All Right Reserved</p>
         </div>
         </div>
     <!-- End Footer -->

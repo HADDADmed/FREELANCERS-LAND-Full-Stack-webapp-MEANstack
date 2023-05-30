@@ -1,3 +1,4 @@
+import { UserService } from './../../../services/user.service';
 import { ServiceService } from './../../../services/service.service';
 import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
@@ -7,6 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Service } from 'src/app/shared/models/Service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-new-service-post',
@@ -25,18 +27,28 @@ export class NewServicePostComponent {
   price!:String;
   returnUrl = '';
   imgPath!:String;
+  currentUser!:User;
+
 
 
   constructor(private formBuilder:FormBuilder,
     private serviceService:ServiceService,
     private activatedRoute:ActivatedRoute,
-    private router:Router) { }
+    private router:Router,
+    private userService:UserService) {
+
+      userService.userObservable.subscribe((newUser)=>{
+        this.currentUser  = newUser;
+      })
+
+    }
 
   ngOnInit():void{
     this.NewServiceForm = this.formBuilder.group({
       name:['',[Validators.required]],
       price:['',Validators.required],
       description:['',Validators.required],
+      category:['',Validators.required],
       imgPath:['',Validators.required]
 
     })
@@ -70,7 +82,9 @@ export class NewServicePostComponent {
           name:this.fc.name.value,
           description:this.fc.description.value,
           price:this.fc.price.value,
-          imgPath:this.fc.imgPath.value
+          imgPath:this.fc.imgPath.value,
+          category:this.fc.category.value,
+          userId: String(this.currentUser._id)
         }
         this.serviceService.saveService(this.myService).subscribe(
           (data)=>{

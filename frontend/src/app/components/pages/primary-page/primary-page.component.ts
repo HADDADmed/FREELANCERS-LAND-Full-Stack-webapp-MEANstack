@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ServiceService } from 'src/app/services/service.service';
+import { UserService } from 'src/app/services/user.service';
 import { Service } from 'src/app/shared/models/Service';
+import { User } from 'src/app/shared/models/User';
+import { RegistrationDialogComponent } from '../../dialogs/registration-dialog/registration-dialog.component';
 
 @Component({
   selector: 'app-primary-page',
   templateUrl: './primary-page.component.html',
-  styleUrls: ['./primary-page.component.css']
+  styleUrls: ['./primary-page.component.scss']
 })
 export class PrimaryPageComponent {
 
@@ -15,7 +19,8 @@ export class PrimaryPageComponent {
   favoriteProducts:any[]=[]
   services:Service[]=[];
   bgImage:string="../../../../assets/images/LandigPic.png"
-  constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
+  user!: User;
+  constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute,private userService:UserService,public dialog: MatDialog){
 
     let servicesObservable:Observable<Service[]>=  this.serviceService.getAll();
     activatedRoute.params.subscribe(()=>{
@@ -25,6 +30,11 @@ export class PrimaryPageComponent {
             console.log(this.services)
       })
     })
+
+    userService.userObservable.subscribe((newUser)=>{
+      this.user  = newUser;
+    })
+
   }
   addToCart(event:any){
     if("cart" in localStorage){
@@ -74,4 +84,28 @@ export class PrimaryPageComponent {
     }
   }
 
+  isAuthenticated(){
+
+    return this.user.token;
+   }
+
+  openDialog(): void {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '260px';
+    dialogConfig.height = '520px';
+    dialogConfig.position = {
+      'top': '95px',
+      'right': '200px'
+    };
+    const dialogRef = this.dialog.open(RegistrationDialogComponent,dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+        });
+}
+logout(){
+  this.userService.logout();
+}
 }

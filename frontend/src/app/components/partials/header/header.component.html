@@ -4,7 +4,7 @@
                   <div id="Logo">
                 <li >
                    <a  routerLink="/">
-                  <img src="assets/images/navbarImgs/pngegg.png"  alt="Logo" style="height: 90px;">
+                  <img src="assets/images/navbarImgs/FREELACERS_LAND_LOGO6.png"  alt="Logo" style="height: 60px;">
                     </a>
               </li>
                   </div>
@@ -20,7 +20,7 @@
                     <li>
                         <div class="dropdown"  *ngIf="isAuthenticated()">
                           <button  >
-                              <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px;" alt="Account">
+                              <img src={{user.imgPath}} style="height: 50px; border-radius: 50%;" alt="Account">
                                 <strong>  {{user.name }}</strong>
                           </button>
                           <div class="dropdown-options">
@@ -51,7 +51,7 @@
         <div id="navbar2" *ngIf="isActive() && !isLoginPageActive()"  >
               <ul>
 
-                <li>  <a  routerLink="/home"><strong>Home Page</strong></a> </li>
+                <li>  <a  routerLink="/"><strong>Home Page</strong></a> </li>
                 <li>  <a  routerLink="/1" ><strong>(Link Test1)</strong></a> </li>
                 <li>  <a  routerLink="/2"><strong>(Link Test2)</strong></a> </li>
                 <li>  <a  routerLink="/3" ><strong>(Link Test3)</strong></a> </li>

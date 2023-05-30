@@ -4,5 +4,6 @@ export class Service{
   price!:number;
   description!:string;
   imgPath!:string;
-
+  category!:string;
+  userId!:string;
 }
