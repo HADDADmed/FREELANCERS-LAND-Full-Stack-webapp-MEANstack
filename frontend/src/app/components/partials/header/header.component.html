@@ -11,7 +11,7 @@
                 <li *ngIf="!isLoginPageActive()">
                   <div class="search-container" >
                       <input #s type="text" name="search" placeholder="Search..." (keyup.enter)="search(s.value)" [value]="searchTerm" class="search-input">
-                      <a routerLink="#searchData" class="search-btn">
+                      <a routerLink="#searchData" class="search-btn" (click)="search(s.value)">
                          <i class="fas fa-search"></i>
                       </a>
                   </div>
@@ -24,7 +24,7 @@
                                 <strong>  {{user.name }}</strong>
                           </button>
                           <div class="dropdown-options">
-                            <a href="/account">Account</a>
+                            <a href="#">Account</a>
                             <a routerLink="/services/new">Add service</a>
                             <a href="#">My Services</a>
                             <a routerLink="/favorite">My favorites</a>

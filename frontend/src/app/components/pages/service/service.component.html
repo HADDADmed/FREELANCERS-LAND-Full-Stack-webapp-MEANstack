@@ -1,33 +1,42 @@
 
 <p style="color:transparent;">.</p>
     <p style="color:transparent;">.</p>
-<div class="container">
+<div class="container" *ngIf="service">
 
   <div class="single-product">
       <div class="row">
 
-                    <div class="col-6">
+                    <div class="col-6" >
                               <div class="product-image">
                                   <div class="product-image-main">
                                       <img [src]="service.imgPath" [alt]="service.name"  id="product-main-image">
                                   </div>
                                   <div class="product-image-slider">
-                                      <img src="{{service.imgPath}}" [alt]="service.name" class="image-list">
-                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
-                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
-                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
-                                      <img src="{{service.imgPath}}" [alt]="service.name"  class="image-list">
-
+                                    <a (click)="changImageToMain('assets/images/img2.jpg')">
+                                      <img src="assets/images/img2.jpg" [alt]="service.name"  class="image-list">
+                                    </a>
+                                    <a  (click)="changImageToMain('assets/images/img3.jpg')">
+                                      <img src="assets/images/img3.jpg" [alt]="service.name"  class="image-list">
+                                    </a>
+                                    <a (click)="changImageToMain('assets/images/img4.jpg')">
+                                      <img src="assets/images/img4.jpg" [alt]="service.name"  class="image-list">
+                                    </a>
+                                    <a  (click)="changImageToMain('assets/images/img5.jpg')">
+                                      <img src="assets/images/img5.jpg" [alt]="service.name"  class="image-list">
+                                    </a>
+                                    <a  (click)="changImageToMain('assets/images/img1.jpg')">
+                                      <img src="assets/images/img1.jpg" [alt]="service.name"  class="image-list">
+                                    </a>
                                   </div>
                               </div>
                     </div>
 
 
-                <div class="col-6">
+                <div class="col-6" >
                     <div class="breadcrumb">
                         <span><a href="#">Fiverr Pro</a></span>
-                        <span><a href="#"> Graphics & Design</a></span>
-                        <span class="active">Digital art creation</span>
+                        <span><a href="#">{{service.category}}</a></span>
+                        <span class="active">{{service.name}}</span>
                     </div>
 
                     <div class="product">
@@ -43,24 +52,24 @@
                             <span class="review">(47 Review)</span>
                         </div>
                         <div class="product-price">
-                            <span class="offer-price">$ {{service.price |number: '1.2-2' }}</span>
-                            <span class="sale-price">$ {{service.price |number: '1.2-2' }}</span>
+                            <span class="offer-price" id="offer-price">$ {{service.price |number: '1.2-2' }}</span>
+                            <span class="sale-price" id="sale-price" >$ {{(service.price+100) |number: '1.2-2' }}</span>
                         </div>
 
                         <div class="product-details">
-                            <h3>Description</h3>
-                            <p> {{service.description}}</p>
+                            <h3><strong> Description :</strong></h3>
+                            <p> {{service.description }}</p>
                         </div>
                         <div class="product-size">
-                            <h4>Pack</h4>
+                            <h4><strong>Pack :</strong></h4>
                             <div class="size-layout">
-                                <input type="radio" name="size" value="S" id="1" class="size-input">
+                                <input type="radio" name="size" value="S" id="1" class="size-input" checked (change)="changePrice('S')">
                                 <label for="1" class="size">Basic</label>
 
-                                <input type="radio" name="size" value="M" id="2" class="size-input">
+                                <input type="radio" name="size" value="M" id="2" class="size-input" (change)="changePrice('M')">
                                 <label for="2" class="size">Standart</label>
 
-                                <input type="radio" name="size" value="L" id="3" class="size-input">
+                                <input type="radio" name="size" value="L" id="3" class="size-input" (change)="changePrice('L')">
                                 <label for="3" class="size">Premium</label>
 
 

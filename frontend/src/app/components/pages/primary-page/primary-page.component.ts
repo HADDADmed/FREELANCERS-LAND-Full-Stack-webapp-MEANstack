@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ServiceService } from 'src/app/services/service.service';
 import { UserService } from 'src/app/services/user.service';
@@ -13,14 +13,18 @@ import { RegistrationDialogComponent } from '../../dialogs/registration-dialog/r
   templateUrl: './primary-page.component.html',
   styleUrls: ['./primary-page.component.scss']
 })
-export class PrimaryPageComponent {
+export class PrimaryPageComponent implements AfterViewInit{
 
   cartProducts:any[]=[]
   favoriteProducts:any[]=[]
   services:Service[]=[];
-  bgImage:string="../../../../assets/images/LandigPic.png"
   user!: User;
-  constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute,private userService:UserService,public dialog: MatDialog){
+  constructor(private serviceService:ServiceService,
+    activatedRoute:ActivatedRoute,
+    private userService:UserService,
+    public dialog: MatDialog,
+    private router:Router
+    ){
 
     let servicesObservable:Observable<Service[]>=  this.serviceService.getAll();
     activatedRoute.params.subscribe(()=>{
@@ -35,6 +39,14 @@ export class PrimaryPageComponent {
       this.user  = newUser;
     })
 
+
+
+
+  }
+
+  ngAfterViewInit(){
+
+    this.changeBgImageDinamicly();
   }
   addToCart(event:any){
     if("cart" in localStorage){
@@ -72,17 +84,62 @@ export class PrimaryPageComponent {
   }
 
 
-  changBgImage(){
+  changeBgImage(direction:string) {
+    console.log("click in change bg image");
+    let check1 = document.getElementById("check1");
+    let check2 = document.getElementById("check2");
+    let check3 = document.getElementById("check3");
 
-    let landing = document.getElementById("landing") as HTMLImageElement;
 
-    if(this.bgImage=="../../../../assets/images/LandigPic2.png"){
-
-       this.bgImage="../../../../assets/images/landig.png"
-    }else{
-      this.bgImage="../../../../assets/images/LandigPic.png"
+    let landing = document.getElementById("landing");
+    console.log(landing!.style.backgroundImage);
+    if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic5.png")'){
+      landing!.style.backgroundImage = "url(../../../../assets/images/LandingPic6.png)";
+      check1?.classList.remove("active");
+      check2?.classList.remove("active");
+      check3?.classList.add("active");
     }
+    else if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic6.png")'){
+      landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic4.png")';
+      check1?.classList.remove("active");
+      check2?.classList.add("active");
+      check3?.classList.remove("active");
+    }else if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic4.png")'){
+      landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic5.png")';
+      check1?.classList.add("active");
+      check2?.classList.remove("active");
+      check3?.classList.remove("active");
+
+  }else{
+    landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic5.png")';
+    check1?.classList.add("active");
+    check2?.classList.remove("active");
+    check3?.classList.remove("active");
   }
+}
+
+changeBgImageDinamicly() {
+  console.log("click in change bg image");
+  const check1 = document.getElementById("check1");
+  const check2 = document.getElementById("check2");
+  const check3 = document.getElementById("check3");
+  const landing = document.getElementById("landing");
+
+  const images = [
+    "../../../../assets/images/LandingPic5.png",
+    "../../../../assets/images/LandingPic6.png",
+    "../../../../assets/images/LandingPic4.png"
+  ];
+
+  let currentIndex = 0;
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    landing!.style.backgroundImage = `url(${images[currentIndex]})`;
+    check1?.classList.toggle("active", currentIndex === 0);
+    check2?.classList.toggle("active", currentIndex === 1);
+    check3?.classList.toggle("active", currentIndex === 2);
+  }, 3000);
+}
 
   isAuthenticated(){
 
@@ -107,5 +164,11 @@ export class PrimaryPageComponent {
 }
 logout(){
   this.userService.logout();
+}
+
+search(Term:String):void{
+  if (Term) {
+     this.router.navigateByUrl('/search/'+Term+'/horizental');
+  }
 }
 }

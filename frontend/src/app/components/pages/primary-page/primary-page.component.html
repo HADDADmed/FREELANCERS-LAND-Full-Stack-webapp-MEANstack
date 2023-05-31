@@ -14,18 +14,17 @@
     <!-- Start Header-->
     <header>
         <div class="container">
-            <div id="Logo">
-                <li >
-                    <a  routerLink="/">
-                        <img src="assets/images/navbarImgs/FREELACERS_LAND_LOGO3.png"  alt="Logo" style="height: 60px;">
-                    </a>
-                </li>
-            </div>
+          <div id="Logo">
+
+                <a  routerLink="/">
+                    <img src="assets/images/navbarImgs/FREELACERS_LAND_LOGO3.png"  alt="Logo" style="height: 60px;">
+                </a>
+        </div>
             <nav>
                 <i class="fas fa-bars toggle-menu"></i>
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
-                    <li><a href="/home">Services</a></li>
+                    <li><a href="/services/horizental">Services</a></li>
                     <li><a href="#portfolio">Design</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#pricing">Pricing</a></li>
@@ -70,26 +69,33 @@
             <div class="content">
                 <h2>Find the right <span  style="font-size: 50px; font-family: Brush Script MT;" >freelance service</span>, right away</h2>
               <label id="serchBar">
-                <input type="text" id="serchBar" required>
-                <button id="serchBar" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" id="serchBar"  #s  name="search"  (keyup.enter)="search(s.value)" class="search-input"required>
+                <button id="serchBar" type="submit" (click)="search(s.value)"><i class="fa-solid fa-magnifying-glass"></i></button>
 
                 <ul id="serchBar">
-                  <li id="serchBar" s>s</li>
+                  <li id="serchBar" s>S</li>
                   <li id="serchBar" e>e</li>
                   <li id="serchBar"  a>a</li>
                   <li id="serchBar" r>r</li>
                   <li id="serchBar" c>c</li>
                   <li id="serchBar" h>h</li>
+
+
+
                 </ul>
               </label>
             </div>
         </div>
-        <i class="fas fa-angle-left change-background fa-2x"></i>
-        <i class="fas fa-angle-right change-background fa-2x"></i>
+        <a (click)="changeBgImage('left')" style="cursor:pointer;">
+          <i class="fas fa-angle-left change-background fa-2x"></i>
+        </a>
+        <a  (click)="changeBgImage('right')" style="cursor:pointer;">
+          <i class="fas fa-angle-right change-background fa-2x"></i>
+        </a>
         <ul class="bullets">
-            <li></li>
-            <li class="active"></li>
-            <li></li>
+            <li id="check1"></li>
+            <li id="check2" class="active"></li>
+            <li id="check3"></li>
         </ul>
     </div>
     <!-- End Landing -->
@@ -263,7 +269,7 @@
     </div>
     <!-- End About -->
 
-    <div class = "">
+    <div class = "products">
       <h1 class = "lg-title">Special Services Offers</h1>
       <div class = "product-items" >
           <!-- single product -->
@@ -320,7 +326,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <img src="../../../../assets/images/ourImages/HADDADPic.JPG" alt="">
+                    <img src="../../../../assets/images/ourImages/HADDADPic.jpg" alt="">
                     <div class="text">
                       Software eneneering from FSTTanger and a freelancer in <strong>FREELANCERS-LAND</strong> .
                       design and develop websites and mobile applications.

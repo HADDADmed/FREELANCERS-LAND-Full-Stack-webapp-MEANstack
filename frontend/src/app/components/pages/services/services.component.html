@@ -1,5 +1,5 @@
-<div class = "product-content">
-    <a routerLink="/service/{{data._id}}">
+<!--<div class = "product-content">
+    <a >
       <div class = "product-img">
         <img src="{{ data.imgPath }}" alt="{{ data.name }}">
       </div>
@@ -25,5 +25,41 @@
       <button type = "button" class = "btn-buy" (click)="addf()"> add to favourite
           <span><i class = "fas fa-heart"></i></span>
       </button>
+    </div>
+  </div> -->
+
+
+  <div class="card">
+    <a routerLink="/service/{{data._id}}">
+    <img src="{{ data.imgPath }}" alt="Service Image">
+  </a>
+    <div class="freelancer-info">
+        <img src="{{ data.user.imgPath }}" alt="Freelancer Image">
+        <a href="freelancer-profile.html">{{data.user.name}}</a>
+      </div>
+      <div class="hoverChange">
+    <h3><a style="font-size: 18px;margin: 10px 0;font-family: 'Brushstroke';" routerLink="/service/{{data._id}}"> <strong>{{ data.name | slice:0:26 }}</strong> </a></h3>
+  </div>
+    <div class="star-rating">
+        <i class="fas fa-star"></i>
+        <p>5.0 <span style="color:grey; font-size:smaller;">(300)</span> </p>
+    </div>
+    <div class="card-footer">
+      <div>
+        <a class="listHover" style="cursor:pointer; margin-left: 0%; margin-right: 10px;">
+          <span><i class = "fa-solid fa-list" (click)="add()"></i></span>
+        </a>
+
+        <a class="heartHover" style="cursor:pointer; margin-left: 2px;" >
+            <span><i class = "fa-solid fa-heart" (click)="addf()"></i></span>
+        </a>
+      </div>
+
+        <div>
+
+            <a href="/"><i class=""></i></a>
+            <a  (click)="add()" ><i class=""></i></a>
+        </div>
+        <a href="/">Start with<strong> ${{data.price | number: '1.2-2' }}</strong></a>
     </div>
   </div>

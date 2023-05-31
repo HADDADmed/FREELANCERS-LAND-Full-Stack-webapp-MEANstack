@@ -244,6 +244,24 @@ button.toast-close-button {
   }
 }
 
+/* Make the y-axis scrollbar transparent */
+::-webkit-scrollbar {
+  width: 0px; /* Adjust the width as needed */
+  background-color: transparent;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: transparent transparent; /* Adjust the color as needed */
+  scrollbar-width: thin; /* Adjust the width as needed */
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

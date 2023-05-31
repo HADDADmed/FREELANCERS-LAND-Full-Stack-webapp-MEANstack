@@ -25,21 +25,21 @@
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  
+
   .editing-frame h3 {
     margin-top: 0;
     margin-bottom: 20px;
   }
-  
+
   .editing-frame form {
     display: flex;
     flex-direction: column;
   }
-  
+
   .editing-frame label {
     margin-bottom: 10px;
   }
-  
+
   .editing-frame input[type="text"],
   .editing-frame input[type="password"],
   .editing-frame input[type="email"] {
@@ -47,7 +47,7 @@
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  
+
   .editing-frame button {
     padding: 10px;
     background-color: #007bff;
@@ -56,7 +56,25 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   .editing-frame button:hover {
     background-color: #0056b3;
   }
+
+
+  .co
+{
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: transparent;
+ overflow: hidden;
+  top: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values to customize the shadow */
+  max-width: 500px; /* Set the maximum width you desire */
+  margin-left: auto;
+  margin-right: auto;
+}

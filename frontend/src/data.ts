@@ -1,6 +1,6 @@
 import { Service } from "./app/shared/models/Service";
 
-export const sample_SErvices: Service[] =[
+export const sample_SErvices: Service[] =[]
   // {
   //   _id: '1',
   //   name: 'service 1',
@@ -71,14 +71,18 @@ export const sample_SErvices: Service[] =[
   //   description: 'This is the description for Service 10.',
   //   imgPath: 'assets/images/f.png'
   // }
-];
-
+// ];
 
 
 // {
-
-//   "name":"ZIADBenSaada",
-//   "email":"ziad.bensaada@gmail.com",
-//   "password":"$2b$10$z/jYE0.eFsun99u2mvP9GODW4U65TQP7SxKHXWCxFrBI8R6e90dmO",
-//   "imgPath":"assets/images/navbarImgs/frontend/ourImages/ZiadPic.png",
-//   }
+//   "_id": "10",
+//   "name": "Service 10",
+//   "price": 29.99,
+//   "description": "This is the description for Service 10",
+//   "category": "category 1",
+//   "imgPath": "assets/images/f.png"
+//   "user":{
+//     "name":"ZIADBenSaada",
+//     "email":"ziad.bensaada@gmail.com",
+//     "imgPath":"assets/images/navbarImgs/frontend/ourImages/ZiadPic.png",
+//     }
