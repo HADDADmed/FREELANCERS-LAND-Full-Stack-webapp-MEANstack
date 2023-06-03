@@ -39,6 +39,7 @@ export class NewServicePostComponent {
 
       userService.userObservable.subscribe((newUser)=>{
         this.currentUser  = newUser;
+        console.log(this.currentUser);
       })
 
     }
@@ -63,7 +64,9 @@ export class NewServicePostComponent {
   //   console.log(this.imgPath);
   // }
 
-
+    userConsole(){
+      console.log(this.currentUser.imgPath);
+    }
     get fc(){
         return this.NewServiceForm.controls;
       }
@@ -84,8 +87,9 @@ export class NewServicePostComponent {
           price:this.fc.price.value,
           imgPath:this.fc.imgPath.value,
           category:this.fc.category.value,
-          userId: String(this.currentUser._id)
+          user:{ name:this.currentUser.name ,email:this.currentUser.email,imgPath:this.currentUser.imgPath||''}
         }
+        console.log(this.myService);
         this.serviceService.saveService(this.myService).subscribe(
           (data)=>{
             console.log(data);

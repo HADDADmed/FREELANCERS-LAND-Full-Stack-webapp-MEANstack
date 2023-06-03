@@ -5,7 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
-import { HomeComponent } from './components/pages/home/home.component';
+import { HorizentalScrollServicesComponent } from './servicesDisplay/horizental-scroll-services/horizental-scroll-services.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { ServiceComponent } from './components/pages/service/service.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
@@ -29,13 +29,14 @@ import { PrimaryPageComponent } from './components/pages/primary-page/primary-pa
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { AcountComponent } from './components/acount/acount.component';
-
+import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
+import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
+    HorizentalScrollServicesComponent,
     FooterComponent,
     ServiceComponent,
     LoginPageComponent,
@@ -50,6 +51,8 @@ import { AcountComponent } from './components/acount/acount.component';
     FavoriteComponent,
     RegistrationComponent,
     AcountComponent,
+    VerticalScrollServicesComponent,
+    PaymentDialogComponent,
   ],
   imports: [
     FormsModule,

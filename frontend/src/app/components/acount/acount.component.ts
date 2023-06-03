@@ -49,7 +49,11 @@ export class AcountComponent {
   saveEditedData() {
     // Perform the necessary actions to save the edited data
     // For example, send an HTTP request to update the data on the server
-
+      const newUser = {
+        name: this.editedData.name,
+        password: this.editedData.password,
+        email: this.editedData.email,
+      };
     // After saving, disable editing mode
     this.isEditing = false;
   }

@@ -1,0 +1,11 @@
+
+
+
+
+    <h1 class = "lg-title">Special Services Offers</h1>
+    <div class = "product-items" >
+        <!-- single product -->
+      <div class = "product" *ngFor="let service of services">
+        <app-services [data]="service" (itemf)="addTofavorite($event)" (item)="addToCart($event)"></app-services>
+      </div>
+    </div>

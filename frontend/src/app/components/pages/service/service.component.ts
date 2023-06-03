@@ -18,7 +18,7 @@ export class ServiceComponent {
    activatedRoute.params.subscribe((params)=>{
      if (params.serviceId) {
        serviceService.getServiceById(params.serviceId).subscribe(serverService=>{
-        this.service = serverService
+        this.service! = serverService;
        })
      }
    })
@@ -33,13 +33,40 @@ export class ServiceComponent {
         this.cartProducts.push(event)
         localStorage.setItem("cart",JSON.stringify(this.cartProducts))
         console.log(this.cartProducts)
-      } 
+      }
     }else{
       this.cartProducts.push(event)
       localStorage.setItem("cart",JSON.stringify(this.cartProducts))
     }
-    
+
+  }
+  changeColor() {
+
+    const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
+    navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
   }
 
+
+  changePrice(pack: string) {
+    let offerPrice = document.getElementById('offer-price');
+    let salePrice = document.getElementById('sale-price');
+    if (pack === 'S') {
+      offerPrice!.textContent =  '$ '+String(this.service.price) ; // Set price for Basic pack
+      salePrice!.textContent =  '$ '+String(this.service.price +100) ; // Set price for Basic pack
+    } else if (pack === 'M') {
+      offerPrice!.textContent =  '$ '+String(this.service.price + 100); // Set price for Basic pack
+      salePrice!.textContent =  '$ '+String(this.service.price +200) ; // Set price for Basic pack
+    } else if (pack === 'L') {
+      offerPrice!.textContent =  '$ '+String(this.service.price + 200) // Set price for Premium pack
+      salePrice!.textContent =  '$ '+String(this.service.price +300) ; // Set price for Basic pack
+    }
+  }
+
+  changImageToMain(path: string) {
+    let mainImage = document.getElementById('product-main-image');
+    console.log(mainImage)
+     mainImage!.setAttribute('src', path);
+     console.log(mainImage)
+  }
 
   }

@@ -1,0 +1,157 @@
+
+
+.products{
+  background: var(--alice-blue);
+  padding: 2.2rem 0;
+
+
+}
+.container1 {
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+width: 100%;
+
+}
+.products .text-light{
+  text-align: center;
+  width: 70%;
+  margin: 0.9rem auto;
+}
+.product{
+  margin: 2rem;
+  width: 350px;
+
+  position: relative;
+}
+
+@media screen and (min-width: 992px){
+    .product-items{
+        display: grid;
+    }
+    .product-col-r-bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1200px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+    .products .text-light{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1336px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+    .product-collection-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .flex{
+        height: 60vh;
+    }
+    .product-col-left{
+        height: 121.5vh;
+    }
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0px;
+  width: 280px;
+  height: auto;
+
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  /*border-radius: 4px;*/
+}
+
+.card h3 {
+padding: 10px;
+  margin: 10px 0;
+}
+
+.card p {
+
+  margin: 0;
+}
+
+.card button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.card a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+.card button:hover {
+  background-color: #45a049;
+}
+
+.card-footer {
+    padding: 10px;
+
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-footer p {
+  margin: 0;
+}
+
+.freelancer-info {
+    padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.freelancer-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.freelancer-info a {
+  color: #000;
+  text-decoration: none;
+}
+
+.freelancer-info a:hover {
+  text-decoration: underline;
+}
+.star-rating {
+   padding-left: 10px;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 15px 0;
+  }

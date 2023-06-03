@@ -1,5 +1,5 @@
 
-  const BASE_URL = 'http://localhost:65530'
+  const BASE_URL = 'http://localhost:5000'
 
   export const SERVICES_URL = BASE_URL + '/api/services'
   export const SERVICES_BY_SEARCH_URL = SERVICES_URL + '/search/'

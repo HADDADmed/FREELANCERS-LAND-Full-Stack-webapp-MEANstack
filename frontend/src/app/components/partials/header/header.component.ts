@@ -34,13 +34,13 @@ export class HeaderComponent implements OnInit{
     })
 
 
-    this.scrolling = false;
+     this.scrolling = true;
 
 
   }
   search(Term:String):void{
     if (Term) {
-       this.router.navigateByUrl('/search/'+Term);
+       this.router.navigateByUrl('/search/'+Term+'/horizental');
     }
   }
 
@@ -73,7 +73,7 @@ changeColor() {
 }
 
 @Input() name: string = '';
-scrolling: boolean;
+scrolling!: boolean;
 
 @HostListener('window:scroll', ['$event'])
 onScrollEvent(event: Event) {

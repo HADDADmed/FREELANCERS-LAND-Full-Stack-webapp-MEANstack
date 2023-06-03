@@ -199,8 +199,7 @@ img{
 /* Media Queries */
 @media screen and (min-width: 992px){
     .product-items{
-        display: flex;
-        overflow-x: scroll;
+        display: grid;
     }
     .product-col-r-bottom{
         display: grid;

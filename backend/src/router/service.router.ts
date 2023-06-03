@@ -79,21 +79,23 @@ router.put('/:serviceID',async (request,response)=>{
    }
 });
 
-router.get('/search/:searchTerm',(request,response)=>{
+router.get('/search/:searchTerm',async (request,response)=>{
     // const searchTerm = request.params.searchTerm;
     //   const services =  sample_Services.filter(service=>service.name.toLowerCase().includes(searchTerm.toLowerCase()))
     // response.send(services);
     const searchTerm = request.params.searchTerm;
-    Service.find({name:{$regex:searchTerm,$options:'i'}},(error: any,services: any)=>{
-      if (error) {
-        console.log("error in getting data from database",error);
-        response.status(500).json({message:"error in getting data from database"});
-      }else{
-        console.log("data received from database by serchTearm ");
-        response.status(200).json(services);
-      }
-    })
-})
+    
+    const data = await Service.find({name:{$regex:searchTerm,$options:'i'}})
+    try {
+      console.log("data received from database");
+      response.status(200).json(data);
+    } catch (error) {
+      console.log("error in getting data from database",error); 
+      response.status(500).json({message:"error in getting data from database"});
+    }
+  })
+
+
 
 
 export  default router;

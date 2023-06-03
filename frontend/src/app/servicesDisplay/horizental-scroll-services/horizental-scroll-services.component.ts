@@ -1,15 +1,15 @@
 import { Observable } from 'rxjs';
-import { ServiceService } from './../../../services/service.service';
-import { Service } from './../../../shared/models/Service';
+import { ServiceService } from '../../services/service.service';
+import { Service } from '../../shared/models/Service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-horizental-scroll-services',
+  templateUrl: './horizental-scroll-services.component.html',
+  styleUrls: ['./horizental-scroll-services.component.css']
 })
-export class HomeComponent {
+export class HorizentalScrollServicesComponent {
 
      cartProducts:any[]=[]
      favoriteProducts:any[]=[]
@@ -19,7 +19,7 @@ export class HomeComponent {
       let servicesObservable:Observable<Service[]>
       activatedRoute.params.subscribe((params)=>{
         if (params.searchTerm) {
-          servicesObservable = serviceService.getServiceBySearchTearm(params.searchTerm);
+          servicesObservable =  this.serviceService.getServiceBySearchTearm(params.searchTerm);
         }
         else{
            servicesObservable = this.serviceService.getAll();
