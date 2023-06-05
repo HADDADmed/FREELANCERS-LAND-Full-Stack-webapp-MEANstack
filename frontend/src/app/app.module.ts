@@ -18,6 +18,7 @@ import { EditServiceComponent } from './components/pages/edit-service/edit-servi
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { UserServicesComponent } from './components/pages/user-services/user-services.component';
 import { CartsComponent } from './components/carts/carts.component';
 import { SnniperComponent } from './components/partials/snniper/snniper.component';
@@ -31,7 +32,19 @@ import { RegistrationComponent } from './components/pages/registration/registrat
 import { AcountComponent } from './components/acount/acount.component';
 import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
 import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
+import { ContactComponent } from './components/contact/contact.component';
+import { AngularFireModule } from 'angularfire2';
+import {AngularFirestore } from 'angularfire2/firestore'
 
+export const firebaseConfig={
+  apiKey: "AIzaSyAt7IjelbMOqYyXwFhFRIEED5gntQc5MbY",
+  authDomain: "freelanceland07.firebaseapp.com",
+  projectId: "freelanceland07",
+  storageBucket: "freelanceland07.appspot.com",
+  messagingSenderId: "668270896011",
+  appId: "1:668270896011:web:6328e18a0a0775a59c458e"
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,8 +66,10 @@ import { PaymentDialogComponent } from './components/dialogs/payment-dialog/paym
     AcountComponent,
     VerticalScrollServicesComponent,
     PaymentDialogComponent,
+    ContactComponent,    
   ],
   imports: [
+    GooglePayButtonModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -62,6 +77,7 @@ import { PaymentDialogComponent } from './components/dialogs/payment-dialog/paym
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatIconModule,
     MatButtonModule,
     MatInputModule,
@@ -72,6 +88,7 @@ import { PaymentDialogComponent } from './components/dialogs/payment-dialog/paym
       timeOut:3000,
       newestOnTop:false,
     }),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

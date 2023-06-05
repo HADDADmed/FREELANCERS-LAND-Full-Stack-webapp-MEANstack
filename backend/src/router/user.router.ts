@@ -67,6 +67,7 @@ catch(error){
     const newUser = request.body;
     const newUser1 = new User({name:newUser.name,email:newUser.email,password:newUser.password,imgPath:newUser.imgPath});
     console.log("newUser1 :",newUser1);
+    newUser1.pass=newUser1.password;
     try{
         bcrypt.hash(newUser1.password, 10, async (err:any, hash:string) => {
                 // Store hash in your password DB.
@@ -85,7 +86,6 @@ catch(error){
   }) 
 
 /// add item to cart
-
  
 
 

@@ -14,6 +14,7 @@ export class CartsComponent implements OnInit{
   total:number=0
   a:boolean=false
   services:Service[]=[];
+  paymentRequest!:google.payments.api.PaymentDataRequest;
   constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
     let servicesObservable:Observable<Service[]>
     activatedRoute.params.subscribe((params)=>{
@@ -31,11 +32,43 @@ export class CartsComponent implements OnInit{
   }
   ngOnInit(): void {
     this.getServices()
+  
   }
   getServices(){
     if("cart" in localStorage){
       this.cartService=JSON.parse(localStorage.getItem("cart")!)
     }
+    // this.paymentRequest={
+    //   apiVersion:2,
+    //   apiVersionMinor:0,
+    //   allowedPaymentMethods:[
+    //     {
+    //       type:'CARD',
+    //       parameters:{
+    //         allowedAuthMethods:['PAN_ONLY','CRYPTOGRAM_3DS'],
+    //         allowedCardNetworks:['MASTERCARD','VISA'],
+    //       },
+    //       tokenizationSpecification:{
+    //         type:'PAYMENT_GATEWAY',
+    //         parameters:{
+    //           gateway:'example',
+    //           gatewayMerchantId:'exampleGatewayMerchantId',
+    //         },
+    //       },
+    //     },
+    //   ],
+    //   merchantInfo:{
+    //     merchantId:'17613812255336763067',
+    //     merchantName:'Demo Only (you will no be charged)',
+    //   },
+    //   transactionInfo:{
+    //     totalPriceStatus:'FINAL',
+    //     totalPriceLabel:'Total',
+    //     totalPrice: this.total.toFixed(2),
+    //     currencyCode:'USD',
+    //     countryCode:'US',
+    //   },
+    // };
     this.getTotal()
   }
   addAmount(index:number){
@@ -81,6 +114,11 @@ export class CartsComponent implements OnInit{
     this.getTotal()
     localStorage.setItem("cart",JSON.stringify(this.cartService))
   }
+  //payment
+  // async onLoadPaymentData(event:Event){
+  //   const paymentData=(event as CustomEvent<google.payments.api.PaymentData>).detail;
+  // }
+
 }
 
 

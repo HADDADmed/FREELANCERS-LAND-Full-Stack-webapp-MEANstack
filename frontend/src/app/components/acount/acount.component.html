@@ -9,8 +9,8 @@
       <li>
         <strong>Password:</strong>
         <span class="password-display">
-          <ng-container *ngIf="passwordVisible; else asterisks">{{ data.password }}</ng-container>
-          <ng-template #asterisks>{{ '*'.repeat(data.password.length) }}</ng-template>
+          <ng-container *ngIf="passwordVisible; else asterisks">{{ data.pass }}</ng-container>
+          <ng-template #asterisks>{{ '*'.repeat(data.pass.length) }}</ng-template>
         </span>
         <button (click)="togglePasswordVisibility()" class="eye-button">
           <i class="fa-solid" [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"></i>

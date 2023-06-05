@@ -12,6 +12,7 @@ import { combineLatest } from 'rxjs';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { AcountComponent } from './components/acount/acount.component';
 import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {path:'',component:PrimaryPageComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'carts',component:CartsComponent},
   {path:'favorite',component:FavoriteComponent},
   {path:'account',component:AcountComponent},
+  {path:'contact',component:ContactComponent},
   {path:"**",redirectTo:"",pathMatch:"full"}
 ];
 

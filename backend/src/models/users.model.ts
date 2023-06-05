@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
     isSeler : {type:Boolean,required:true,default:false},
     token : {type:String,required:false},
     imgPath : {type:String,required:false},
+    pass:{type:String,require:false}
 });
 
 const User = mongoose.model('users',userSchema);

@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit{
     })
 
 
-     this.scrolling = true;
+     this.scrolling = false;
 
 
   }

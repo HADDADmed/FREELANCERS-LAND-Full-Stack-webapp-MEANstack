@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -7,18 +7,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'FirstP';
-
+  
 
   constructor(private el: ElementRef,
     private activatedRoute:ActivatedRoute,
-    private router:Router,) {}
+    private router:Router) {}
+  
 
   isHomePageActif(): boolean {
     const currentUrl = this.router.url;
     const urlFragments = ['/', '#service', '#portfolio', '#pricing', '#about', '#contact'];
     return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
   }
-
+  
 }

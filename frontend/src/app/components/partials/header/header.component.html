@@ -2,11 +2,11 @@
   <div class="navbar-container" *ngIf="isHomePageActif()">
        <div id="navbar1">
                   <div id="Logo">
-                <li >
+                <li>
                    <a  routerLink="/">
                   <img src="assets/images/navbarImgs/FREELACERS_LAND_LOGO6.png"  alt="Logo" style="height: 60px;">
                     </a>
-              </li>
+                 </li>
                   </div>
                 <li *ngIf="!isLoginPageActive()">
                   <div class="search-container" >
@@ -24,7 +24,7 @@
                                 <strong>  {{user.name }}</strong>
                           </button>
                           <div class="dropdown-options">
-                            <a href="#">Account</a>
+                            <a href="/account">Account</a>
                             <a routerLink="/services/new">Add service</a>
                             <a href="#">My Services</a>
                             <a routerLink="/favorite">My favorites</a>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="dropdown"  *ngIf="!isAuthenticated()">
                           <button routerLink="/login" >
-                              <img src="assets/images/me.jpeg" style="height: 50px;" alt="Account">
+                              <img src="assets\images\navbarImgs\pngwing.com.png" style="height: 50px;" alt="Account">
                                 <strong> Login</strong>
                           </button>
                           <div class="dropdown-options">
@@ -52,17 +52,15 @@
               <ul>
 
                 <li>  <a  routerLink="/"><strong>Home Page</strong></a> </li>
-                <li>  <a  routerLink="/1" ><strong>(Link Test1)</strong></a> </li>
-                <li>  <a  routerLink="/2"><strong>(Link Test2)</strong></a> </li>
-                <li>  <a  routerLink="/3" ><strong>(Link Test3)</strong></a> </li>
-                <li>  <a  routerLink="/4"><strong>(Link Test4)</strong></a>  </li>
-                <li>  <a  routerLink="/5" ><strong>(Link Test5)</strong></a> </li>
-                <li>  <a  routerLink="/6"><strong>(Link Test6)</strong></a> </li>
-                <li>  <a  routerLink="/7"><strong>(Link Test7)</strong></a> </li>
-                <li>  <a  routerLink="/8"><strong>(Link Test8)</strong></a> </li>
-                <li>  <a  routerLink="/9" ><strong>(Link Test9)</strong></a> </li>
-                <li>  <a  routerLink="/10"><strong>(Link Test10)</strong></a> </li>
-                <li>  <a  routerLink="/10"><strong>(Link Test11)</strong></a> </li>
+                <li>  <a  routerLink="/1" ><strong>Web Development</strong></a> </li>
+                <li>  <a  routerLink="/2"><strong>Graphic Design</strong></a> </li>
+                <li>  <a  routerLink="/3" ><strong>Writing and Content Creation</strong></a> </li>
+                <li>  <a  routerLink="/4"><strong>Social Media Management</strong></a>  </li>
+                <li>  <a  routerLink="/5" ><strong>Data Entry</strong></a> </li>
+                <li>  <a  routerLink="/6"><strong>SEO</strong></a> </li>
+                <li>  <a  routerLink="/7"><strong>Mobile App Development</strong></a> </li>
+                <li>  <a  routerLink="/8"><strong>Virtual Assistant</strong></a> </li>
+                <li>  <a  routerLink="/9" ><strong>Video Editing</strong></a> </li>
 
 
               </ul>
