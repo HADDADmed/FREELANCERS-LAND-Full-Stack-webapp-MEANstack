@@ -12,6 +12,16 @@ export class User{
   password!:string;
   token?:string;
   imgPath?:string;
+  isSeler?:boolean;
+  Cart?:{
+    services: [{
+      name: string;
+      price: number;
+      description: string;
+      imgPath: string;
+    }]
+  };
+
 
 
 }

@@ -13,12 +13,18 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { AcountComponent } from './components/acount/acount.component';
 import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { HelloComponent } from './components/partials/hello/hello.component';
+import { CheckOutPageComponent } from './components/pages/check-out-page/check-out-page.component';
 
 const routes: Routes = [
   {path:'',component:PrimaryPageComponent},
   {path:'services/horizental',component:HorizentalScrollServicesComponent},
   {path:'search/:searchTerm/horizental',component:HorizentalScrollServicesComponent},
-   {path:'services/Vertical',component:VerticalScrollServicesComponent},
+  {path:'services/Vertical',component:VerticalScrollServicesComponent},
+  {path:'homePage',component:HomePageComponent},
+  {path:'hello',component:HelloComponent},
   {path:'search/:searchTerm/Vertical',component:VerticalScrollServicesComponent},
   {path:'service/:serviceId',component:ServiceComponent},
   {path:'login',component:LoginPageComponent},
@@ -28,6 +34,8 @@ const routes: Routes = [
   {path:'favorite',component:FavoriteComponent},
   {path:'account',component:AcountComponent},
   {path:'contact',component:ContactComponent},
+  {path:'payment/:serviceId',component:PaymentDialogComponent},
+  {path:'checkout',component:CheckOutPageComponent},
   {path:"**",redirectTo:"",pathMatch:"full"}
 ];
 

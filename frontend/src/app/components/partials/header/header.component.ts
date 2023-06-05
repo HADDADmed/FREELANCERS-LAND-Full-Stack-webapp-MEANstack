@@ -1,5 +1,5 @@
 import { SERVICES_URL } from './../../../shared/constants/urls';
-import { UserService } from './../../../services/user.service';
+import { UserService } from '../../../models-services/user.service';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/User';
@@ -68,9 +68,11 @@ export class HeaderComponent implements OnInit{
 
 changeColor() {
 
+  const navbar2 = document.getElementById("navbar2"); // Get the navbar element by its ID
   const navbar = document.getElementById("navbar1"); // Get the navbar element by its ID
-  navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
-}
+
+    navbar!.style.backgroundColor = "#f5f5f5"; // Change the background color to red
+  }
 
 @Input() name: string = '';
 scrolling!: boolean;
@@ -89,7 +91,10 @@ onScrollEvent(event: Event) {
 }
 
     isLoginPageActive(){
-      return this.router.url.includes('login')||this.router.url.includes('services/new');
+      return this.router.url.includes('login')||
+      this.router.url.includes('services/new')||
+      this.router.url.includes('/checkout')||
+      this.router.url.includes('/carts');
     }
 
       openDialog(): void {
@@ -114,7 +119,7 @@ onScrollEvent(event: Event) {
 
     isHomePageActif(): boolean {
       const currentUrl = this.router.url;
-      const urlFragments = ['/','/account', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+      const urlFragments = ['/','#service', '#portfolio', '#pricing', '#about', '#contact'];
       return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
     }
  }

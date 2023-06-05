@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServiceService } from 'src/app/services/service.service';
-import { UserService } from 'src/app/services/user.service';
+import { ServiceService } from 'src/app/models-services/service.service';
+import { UserService } from 'src/app/models-services/user.service';
 import { Service } from 'src/app/shared/models/Service';
 import { User } from 'src/app/shared/models/User';
 

@@ -1,8 +1,10 @@
 import { Observable } from 'rxjs';
-import { ServiceService } from '../../services/service.service';
+import { ServiceService } from '../../models-services/service.service';
 import { Service } from '../../shared/models/Service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-horizental-scroll-services',
@@ -14,7 +16,9 @@ export class HorizentalScrollServicesComponent {
      cartProducts:any[]=[]
      favoriteProducts:any[]=[]
      services:Service[]=[];
-     constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
+     constructor(private serviceService:ServiceService,
+      activatedRoute:ActivatedRoute,
+      private toastr: ToastrService){
 
       let servicesObservable:Observable<Service[]>
       activatedRoute.params.subscribe((params)=>{
@@ -36,15 +40,23 @@ export class HorizentalScrollServicesComponent {
         this.cartProducts=JSON.parse(localStorage.getItem("cart")!)
         let exist=this.cartProducts.find(item=>item._id==event._id)
         if(exist){
-          alert("Service already exist!!")
-        }else{
+          this.toastr.warning('Service already exists in your Cart !', 'Error', {
+            positionClass: 'toast-top-center' // Change the position here
+          });
+                }else{
           this.cartProducts.push(event)
           localStorage.setItem("cart",JSON.stringify(this.cartProducts))
           console.log(this.cartProducts)
+          this.toastr.success('Added successfully to Your Cart !', 'Error', {
+            positionClass: 'toast-top-center' // Change the position here
+          });
         }
       }else{
         this.cartProducts.push(event)
         localStorage.setItem("cart",JSON.stringify(this.cartProducts))
+        this.toastr.success('Added successfully to Your Cart !', 'Error', {
+          positionClass: 'toast-top-center' // Change the position here
+        });
       }
 
     }
@@ -53,16 +65,23 @@ export class HorizentalScrollServicesComponent {
         this.favoriteProducts=JSON.parse(localStorage.getItem("favorite")!)
         let exist=this.favoriteProducts.find(item=>item._id==event._id)
         if(exist){
-          alert("already in your favorite page!!")
+          this.toastr.warning('Service already exists!', 'Error', {
+            positionClass: 'toast-center-center' // Change the position here
+          });
         }else{
           this.favoriteProducts.push(event)
           localStorage.setItem("favorite",JSON.stringify(this.favoriteProducts))
           console.log(this.favoriteProducts)
+          this.toastr.success('Added successfully to Your Favorite List !', 'Error', {
+            positionClass: 'toast-top-center' // Change the position here
+          });
         }
       }else{
         this.favoriteProducts.push(event)
         localStorage.setItem("favorite",JSON.stringify(this.favoriteProducts))
+        this.toastr.success('Added successfully to Your Favorite List !', 'Error', {
+          positionClass: 'toast-top-center' // Change the position here
+        });
       }
-
     }
   }

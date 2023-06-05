@@ -86,3 +86,18 @@ export const sample_SErvices: Service[] =[]
 //     "email":"ziad.bensaada@gmail.com",
 //     "imgPath":"assets/images/navbarImgs/frontend/ourImages/ZiadPic.png",
 //     }
+// [
+// {
+//       "name":"ZIADBenSaada",
+//       "email":"ziad.bensaada@gmail.com",
+//       "password":"$2b$10$z/jYE0.eFsun99u2mvP9GODW4U65TQP7SxKHXWCxFrBI8R6e90dmO",
+//       "imgPath":"assets/images/ourImages/ZiadPic.png",
+// },
+// {
+//       "name":"Haddad Mohammed",
+//       "email":"mohhd2045@gmail.com",
+//       "password":"$2b$10$z/jYE0.eFsun99u2mvP9GODW4U65TQP7SxKHXWCxFrBI8R6e90dmO",
+//       "imgPath":"assets/images/ourImages/HADDADPic.png",
+// }]
+
+

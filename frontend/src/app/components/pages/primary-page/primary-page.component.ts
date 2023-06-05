@@ -2,8 +2,8 @@ import { AfterViewInit, Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ServiceService } from 'src/app/services/service.service';
-import { UserService } from 'src/app/services/user.service';
+import { ServiceService } from 'src/app/models-services/service.service';
+import { UserService } from 'src/app/models-services/user.service';
 import { Service } from 'src/app/shared/models/Service';
 import { User } from 'src/app/shared/models/User';
 import { RegistrationDialogComponent } from '../../dialogs/registration-dialog/registration-dialog.component';
@@ -120,6 +120,8 @@ changeBgImageDinamicly() {
   const check2 = document.getElementById("check2");
   const check3 = document.getElementById("check3");
   const landing = document.getElementById("landing");
+  const search_box  = document.getElementById("search-box");
+  const search_boxSlash = document.getElementById("search-boxSlash");
 
   const images = [
     "../../../../assets/images/LandingPic5.png",
@@ -134,6 +136,17 @@ changeBgImageDinamicly() {
     check1?.classList.toggle("active", currentIndex === 0);
     check2?.classList.toggle("active", currentIndex === 1);
     check3?.classList.toggle("active", currentIndex === 2);
+    if (landing!.style.backgroundImage === `url("../../../../assets/images/LandingPic6.png")`) {
+      search_box!.style.borderColor = "gray";
+    }
+    else if (landing!.style.backgroundImage === `url("../../../../assets/images/LandingPic4.png")`) {
+      search_box!.style.borderColor = "blue";
+    }
+    else if (landing!.style.backgroundImage === `url("../../../../assets/images/LandingPic5.png")`) {
+      search_box!.style.borderColor = "red";
+
+    }
+
   }, 3000);
 }
 
@@ -163,8 +176,12 @@ logout(){
 }
 
 search(Term:String):void{
+  console.log("Imad ");
   if (Term) {
+    console.log("Imad2 ");
      this.router.navigateByUrl('/search/'+Term+'/horizental');
-  }
+  }else {
+    console.log("Imad3 ");
+
 }
-}
+} }

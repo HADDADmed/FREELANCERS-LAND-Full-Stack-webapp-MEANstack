@@ -1,0 +1,77 @@
+
+  <div class="container">
+      <div class="content">
+
+        <form [formGroup]="checkOutForm">
+          <div class="formInputs">
+            <div class="form1">
+                <label for="imgPath"><strong>name</strong></label>
+                <input type="text" class="form-control form-control-lg" formControlName="name"  placeholder="Name">
+                <label for="imgPath"><strong>Adress</strong></label>
+                <input type="text" class="form-control form-control-lg" formControlName="address"  placeholder="Adress">
+                <label for="phone"><strong>Phone Number</strong></label>
+                <input type="number" class="form-control form-control-lg" formControlName="phone"  placeholder="Phone">
+              </div>
+                <div class="form2">
+                    <label for="creditCard"><strong>Credit Card</strong></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="creditCard"  placeholder="Credit Card">
+                    <label for="cvv"><strong>CVV</strong></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="cvv"  placeholder="CVV">
+                    <label for="expDate"><strong>Expired Date</strong></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="expDate"  placeholder="Expired Date">
+                </div>
+                <div></div>
+              </div>
+            </form>
+
+            <div class="tab">
+
+                  <table class="table table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cartServices; let index = index" >
+                            <td><img src="{{item. imgPath}}" alt=""></td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.price}}$</td>
+                            <td style="font-size: 12px;">
+                                {{item.description}}
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Total : {{total}}$</th>
+                        </tr>
+                    </tfoot>
+                </table>
+          </div>
+      </div>
+    <div class="map">
+
+      <h3>Choose Your Address On Map</h3>
+      <map [order]="order" ></map>
+
+      <div class="buttons-container">
+        <div class="buttons">
+          <button (click)="createOrder()">
+            Go To Payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

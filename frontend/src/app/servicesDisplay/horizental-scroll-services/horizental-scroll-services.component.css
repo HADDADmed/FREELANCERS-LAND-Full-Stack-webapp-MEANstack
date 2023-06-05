@@ -42,7 +42,7 @@ img{
 /* product section */
 
 .products{
-    background: var(--alice-blue);
+    background: white;
     padding: 2.2rem 0;
 
 
@@ -235,3 +235,5 @@ img{
         height: 121.5vh;
     }
 }
+
+

@@ -35,7 +35,12 @@ import { PaymentDialogComponent } from './components/dialogs/payment-dialog/paym
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { ContactComponent } from './components/contact/contact.component';
 import { AngularFireModule } from 'angularfire2';
-import {AngularFirestore } from 'angularfire2/firestore'
+import {AngularFirestore } from 'angularfire2/firestore';
+import { HelloComponent } from './components/partials/hello/hello.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { MyServicesComponent } from './components/pages/my-services/my-services.component';
+import { CheckOutPageComponent } from './components/pages/check-out-page/check-out-page.component';
+import { MapComponent } from './components/partials/map/map.component';
 
 export const firebaseConfig={
   apiKey: "AIzaSyAt7IjelbMOqYyXwFhFRIEED5gntQc5MbY",
@@ -67,6 +72,11 @@ export const firebaseConfig={
     VerticalScrollServicesComponent,
     PaymentDialogComponent,
     ContactComponent,    
+    HelloComponent,
+    HomePageComponent,
+    MyServicesComponent,
+    CheckOutPageComponent,
+    MapComponent,
   ],
   imports: [
     GooglePayButtonModule,

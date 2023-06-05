@@ -2,10 +2,24 @@
 
 
 
-    <h1 class = "lg-title">Special Services Offers</h1>
-    <div class = "product-items" >
-        <!-- single product -->
-      <div class = "product" *ngFor="let service of services">
-        <app-services [data]="service" (itemf)="addTofavorite($event)" (item)="addToCart($event)"></app-services>
-      </div>
+<div class="co">
+ <div class="buttons">
+  <a style="cursor: pointer; width:50px; height:50px;"  class="btn btn-primary rounded-circle left" (click)="leftScroll()">
+    <i style="justify-content: center; align-items:center;" class="fas fa-angle-left  fa-2x"></i>
+  </a>
+  <a style="cursor: pointer; width:50px; height:50px;"  class="btn btn-primary rounded-circle right"  (click)="rightScroll()">
+    <i class="fas fa-angle-right  fa-2x"></i>
+  </a>
+ </div>
+    <div class = "product-items"  id="product-items">
+            <!-- single product -->
+          <div class = "product" *ngFor="let service of services">
+            <app-services [data]="service" (itemf)="addTofavorite($event)" (item)="addToCart($event)"></app-services>
+          </div>
     </div>
+
+</div>
+
+
+
+

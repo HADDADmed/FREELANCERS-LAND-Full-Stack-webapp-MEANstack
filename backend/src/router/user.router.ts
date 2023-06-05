@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import { Router } from "express";
 import { sample_Services, sample_users } from "../data";
 import Service from "../models/services.model";
+import { ObjectId } from "mongodb";
 
 const bcrypt = require("bcrypt")
 
@@ -13,6 +14,20 @@ router.get('/',async (request,response)=>{
      const users = await User.find({});
     response.send(users);
   })
+
+  router.get('/user/:userID',async (request,response)=>{
+    const userID = request.params.userID;
+    try {
+        const user = await User.findById(userID);
+        response.send(user);
+    } catch (error) {
+        console.log("error in getting data from database",error);
+        response.status(500).json({message:"error in getting data from database"});
+    }
+    
+  }
+  )
+
 // router.post('/login',(request,response)=>{
 //     const {email,plainPassword} = request.body;
     
@@ -39,7 +54,8 @@ router.post('/login',async (request,response)=>{
                 response.status(400).send("username or passsword is not valid")
                 }
             });
-        }else{
+        }else
+        {
             response.status(400).send("username or passsword is not valid")
         }
 
@@ -89,5 +105,22 @@ catch(error){
  
 
 
+// router.delete('/cart/:userId/:serviceID',async (request,response)=>{
+//         const serviceID = request.params.serviceID;
+//         const userId = request.params.userId;
+//         const service1 = await Service.findById(serviceID);
+//         const service = { name:service1?.name, price: service1?.price, description: service1?.description, imgPath: service1?.imgPath }
+//         try {
+//           const user = await User.findById(userId);
+//           if (user && user.Cart! && user.Cart!.services) {
+//             user.Cart.services = user.Cart.services.filter((s) => s.name !== service.name);
+//             await user?.save();
+//           }
+//         } catch (error) {
+//           console.log("Error in getting data from the database", error);
+//           response.status(500).json({ message: "Error in getting data from the database" });
+//         }
+      
+//       })
 
 export const userRouter = router;

@@ -19,12 +19,12 @@
 
                     <li>
                         <div class="dropdown"  *ngIf="isAuthenticated()">
-                          <button  >
-                              <img src={{user.imgPath}} style="height: 50px; border-radius: 50%;" alt="Account">
+                          <button>
+                              <img src={{user.imgPath}} style="height: 45px; border-radius: 50%;" alt="Account">
                                 <strong>  {{user.name }}</strong>
                           </button>
                           <div class="dropdown-options">
-                            <a href="/account">Account</a>
+                            <a routerLink="/account">Account</a>
                             <a routerLink="/services/new">Add service</a>
                             <a href="#">My Services</a>
                             <a routerLink="/favorite">My favorites</a>
@@ -34,20 +34,19 @@
                           </div>
                         </div>
                         <div class="dropdown"  *ngIf="!isAuthenticated()">
-                          <button routerLink="/login" >
-                              <img src="assets\images\navbarImgs\pngwing.com.png" style="height: 50px;" alt="Account">
-                                <strong> Login</strong>
-                          </button>
+                          <button id="DropDown" routerLink="/login" >
+                            <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px; border-radius: 50%;" alt="Account">
+                        </button>
                           <div class="dropdown-options">
-                            <a (click)="openDialog()">Sign up</a>
-
-
+                            <a (click)="openDialog()"><strong>Sign up</strong></a>
+                            <a routerLink="/login"><strong>Login</strong></a>
                           </div>
                         </div>
 
               </li>
 
         </div>
+
         <div id="navbar2" *ngIf="isActive() && !isLoginPageActive()"  >
               <ul>
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/models-services/user.service';
 import { User } from 'src/app/shared/models/User';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
@@ -44,7 +44,7 @@ export class RegistrationDialogComponent {
         name:['',Validators.required],
         email:['',[Validators.required,Validators.email]],
         password:['',Validators.required],
-        imgPath:['',Validators.required]  
+        imgPath:['',Validators.required]
 
       })
 
