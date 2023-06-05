@@ -14,7 +14,7 @@ export class FooterComponent {
   }
   isHomePageActif(): boolean {
     const currentUrl = this.router.url;
-    const urlFragments = ['/','/account', '#service', '#portfolio', '#pricing', '#about', '#contact'];
+    const urlFragments = ['/','/account', '#service', '#portfolio', '#pricing', '/contact','#about', '#contact'];
 
     return urlFragments.every(fragment => !currentUrl.endsWith(fragment));
   }

@@ -83,6 +83,7 @@ catch(error){
     const newUser = request.body;
     const newUser1 = new User({name:newUser.name,email:newUser.email,password:newUser.password,imgPath:newUser.imgPath});
     console.log("newUser1 :",newUser1);
+    newUser1.pass=newUser1.password;
     try{
         bcrypt.hash(newUser1.password, 10, async (err:any, hash:string) => {
                 // Store hash in your password DB.
@@ -101,31 +102,7 @@ catch(error){
   }) 
 
 /// add item to cart
-// router.put('/cart/:userId/:serviceID',async (request,response)=>{
-//   const serviceID = request.params.serviceID;
-//   const userId = request.params.userId;
-//   const service1 = await Service.findById(serviceID);
-   
-//   const service = { _id:String(service1!._id),name: service1!.name, price: service1!.price, description: service1!.description, imgPath: service1!.imgPath }
-//   const user = await User.findById(userId);
-  
-//   try {
-//     console.log("Data received from the database");
-  
-//     if (user?.Cart!.services.some(s => s.name === service.name)) {
-//       // Service already exists in the cart
-//       response.status(400).json({ message: "Service already exists in the cart" });
-//     } else {
-//       user?.Cart!.services.push(service);
-//       await user?.save();
-//       response.status(200).json(user?.Cart!.services);
-//     }
-//   } catch (error) {
-//     console.log("Error in getting data from the database", error);
-//     response.status(500).json({ message: "Error in getting data from the database" });
-//   }
-// }
-// )
+ 
 
 
 // router.delete('/cart/:userId/:serviceID',async (request,response)=>{

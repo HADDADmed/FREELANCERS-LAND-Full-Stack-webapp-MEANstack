@@ -1,0 +1,59 @@
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="main-heading">
+            <h2>CONTACT US</h2>
+        </div>
+        <div class="info">
+            <div class="content">
+                <form [formGroup]="contactForm" class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>
+                    <small *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched">Name is required</small>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                    </mat-form-field>
+                    <small *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">Email is required</small>
+                    <mat-form-field>
+                         <mat-label>Select</mat-label>
+                         <mat-select formControlName="subject">
+                            <mat-option value="Business">Business</mat-option>
+                            <mat-option value="Sales">Sales</mat-option>
+                            <mat-option value="Career">Career</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <small *ngIf="contactForm.controls['subject'].invalid && contactForm.controls['subject'].touched">subject is required</small>
+                    <mat-form-field>
+                        <mat-label>Message</mat-label>
+                        <textarea matInput formControlName="message"></textarea>
+                    </mat-form-field>
+                    <small *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched">Name is required</small>
+                    <button mat-raised-button color="primary" [disabled]="contactForm.invalid" (click)="submitData(contactForm.value)">Send Message</button>
+                    <div class="alert alert-success" role="alert" *ngIf="isSubmited"><strong>Well done!</strong> Submited Successfully!</div>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h4 class="contact-heading">GET IN TOUCH</h4>
+                        <div class="contact-phone">
+                            <span class="phone-label">Phone:</span>
+                            <span class="phone-number">+212 657451913</span>
+                        </div>
+                        <div class="contact-phone">
+                            <span class="phone-label">Phone:</span>
+                            <span class="phone-number">+212 710164956</span>
+                        </div>
+                    </div>
+                    <div class="location-details">
+                        <h4 class="contact-heading">WHERE WE ARE</h4>
+                        <address>
+                            Tanger<br>
+                            Morocco
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

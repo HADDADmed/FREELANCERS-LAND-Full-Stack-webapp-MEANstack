@@ -7,14 +7,12 @@ import { UserService } from 'src/app/models-services/user.service';
 import { Service } from 'src/app/shared/models/Service';
 import { User } from 'src/app/shared/models/User';
 import { RegistrationDialogComponent } from '../../dialogs/registration-dialog/registration-dialog.component';
-
 @Component({
   selector: 'app-primary-page',
   templateUrl: './primary-page.component.html',
   styleUrls: ['./primary-page.component.scss']
 })
 export class PrimaryPageComponent implements AfterViewInit{
-
   cartProducts:any[]=[]
   favoriteProducts:any[]=[]
   services:Service[]=[];
@@ -38,8 +36,6 @@ export class PrimaryPageComponent implements AfterViewInit{
     userService.userObservable.subscribe((newUser)=>{
       this.user  = newUser;
     })
-
-
 
 
   }
