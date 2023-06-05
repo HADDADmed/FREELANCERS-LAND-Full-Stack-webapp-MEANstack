@@ -94,6 +94,29 @@ export class UserService {
     );
   }
 
+  update(user: User): Observable<User> {
+
+    return this.http.put<User>(`${USER_URL}/user/${user._id}`, user).pipe(
+      tap({
+        next: (user) => {
+          this.toastrService.success(
+            `Account updated successfully in FREELACERS-LAND`,
+            `Success :)`,
+            { positionClass: 'toast-top-left' }
+          );
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(
+            errorResponse.error,
+            `Failed to update account :(`,
+            { positionClass: 'toast-top-left' }
+
+          );
+        }
+      })
+    );
+  }
+
   addToCart(userId:string,serviceId:string):Observable<User> {
 
 

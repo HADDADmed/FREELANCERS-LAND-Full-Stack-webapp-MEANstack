@@ -28,6 +28,38 @@ router.get('/',async (request,response)=>{
   }
   )
 
+  router.put('/user/:userId', async (request, response) => {
+    const newUser = request.body;
+    const userId = request.params.userId;
+    console.log("userId", userId);
+    try {
+      bcrypt.hash(newUser.password, 10, async (err: any, hash: string) => {
+        if (err) {
+          console.log("error in hashing password", err);
+          response.status(500).json({ message: "error in hashing password" });
+          return;
+        }
+        // Store hash in your password DB.
+        console.log("hash", hash);
+        newUser.password = hash;
+  
+        try {
+          const data = await User.updateOne({ _id: userId }, newUser);
+          console.log("user was updated successfully", data);
+          response.status(200).json(data);
+        } catch (updateError) {
+          console.log("error in updating user", updateError);
+          response.status(500).json({ message: "error in updating user" });
+        }
+      });
+    } catch (error) {
+      console.log("error in getting data from database", error);
+      response.status(500).json({ message: "error in getting data from database" });
+    }
+  });
+  
+
+
 // router.post('/login',(request,response)=>{
 //     const {email,plainPassword} = request.body;
     

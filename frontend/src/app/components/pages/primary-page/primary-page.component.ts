@@ -135,8 +135,30 @@ changeBgImageDinamicly() {
 
   let currentIndex = 0;
   setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    landing!.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex +1) % images.length;
+    if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic5.png")'){
+      landing!.style.backgroundImage = "url(../../../../assets/images/LandingPic4.png)";
+      check1?.classList.remove("active");
+      check2?.classList.remove("active");
+      check3?.classList.add("active");
+    }
+    else if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic6.png")'){
+      landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic5.png")';
+      check1?.classList.remove("active");
+      check2?.classList.add("active");
+      check3?.classList.remove("active");
+    }else if(landing!.style.backgroundImage == 'url("../../../../assets/images/LandingPic4.png")'){
+      landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic6.png")';
+      check1?.classList.add("active");
+      check2?.classList.remove("active");
+      check3?.classList.remove("active");
+
+  }else{
+    landing!.style.backgroundImage = 'url("../../../../assets/images/LandingPic6.png")';
+    check1?.classList.add("active");
+    check2?.classList.remove("active");
+    check3?.classList.remove("active");
+  }
     check1?.classList.toggle("active", currentIndex === 0);
     check2?.classList.toggle("active", currentIndex === 1);
     check3?.classList.toggle("active", currentIndex === 2);
