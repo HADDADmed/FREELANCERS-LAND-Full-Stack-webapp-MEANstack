@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models/User';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Service } from 'src/app/shared/models/Service';
 import { Observable } from 'rxjs';
-import { ServiceService } from 'src/app/services/service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from 'src/app/models-services/service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/models-services/user.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './carts.component.html',
@@ -11,10 +13,16 @@ import { ActivatedRoute } from '@angular/router';
 export class CartsComponent implements OnInit{
   cartService:any[]=[]
   success:boolean=false
+  userLocal:any;
+  user!:User;
   total:number=0
   a:boolean=false
   services:Service[]=[];
-  constructor(private serviceService:ServiceService,activatedRoute:ActivatedRoute){
+  constructor(private serviceService:ServiceService,
+    private router:Router,
+    activatedRoute:ActivatedRoute,
+    @Inject(UserService) private userService:UserService
+    ){
     let servicesObservable:Observable<Service[]>
     activatedRoute.params.subscribe((params)=>{
       if (params.searchTerm) {
@@ -27,7 +35,15 @@ export class CartsComponent implements OnInit{
         this.services= serverService;
         console.log(this.services)
       })
+
+
     })
+
+    userService.userObservable.subscribe((newUser)=>{
+          this.userLocal  = newUser;
+    })
+
+
   }
   ngOnInit(): void {
     this.getServices()
@@ -63,17 +79,11 @@ export class CartsComponent implements OnInit{
 
   }
   addCart(){
-    let products=this.cartService.map(item=>{
-      return {productId:item.id}
-    })
-    let model={
-      userId:5,
-      date: new Date,
-      products:products
-    }
+
     setTimeout(() => {
+      this.router.navigateByUrl('/checkout')
       this.success=true
-    }, 2000);
+    }, 3000);
 
   }
   clearProducts(){
@@ -81,6 +91,7 @@ export class CartsComponent implements OnInit{
     this.getTotal()
     localStorage.setItem("cart",JSON.stringify(this.cartService))
   }
+
 }
 
 

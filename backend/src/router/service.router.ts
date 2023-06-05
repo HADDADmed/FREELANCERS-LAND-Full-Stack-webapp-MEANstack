@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { sample_Services } from "../data";
 import Service from "../models/services.model";
+import User from "../models/users.model";
 
 
 
@@ -94,6 +95,7 @@ router.get('/search/:searchTerm',async (request,response)=>{
       response.status(500).json({message:"error in getting data from database"});
     }
   })
+
 
 
 

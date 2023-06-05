@@ -131,8 +131,9 @@ header nav ul li a:hover{
     border-bottom:solid 1px #19c8fa;
 }
 header .form{
-    border-left: 1px solid white;
-    margin-left: 30px;
+    border-left: 2px solid white;
+    margin-left: 3px;
+    margin-right: -15px;
     width: 40px;
     height: 30px;
     position: relative;
@@ -206,6 +207,7 @@ header .form i{
     transform: translateY(-50%);
     color: #DDD;
 }
+
 .landing .fa-angle-left{
     left:30px;
 }
@@ -1683,39 +1685,114 @@ button#DropDown:hover{
   scrollbar-width: none;  /* Firefox */
 }
 
-.dropdown-options {
+.dropdown-options22 {
   display: none;
   position: fixed;
   overflow: hidden;
+  margin-top: 13px;
   border-radius:5px;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
   z-index:2;
 
 }
 
-.dropdown:hover .dropdown-options {
+.dropdown:hover .dropdown-options22 {
   display: block;
 }
 
-.dropdown-options a {
-  display: block;
+.dropdown-options22 a {
+  display: flex;
   color: #000000;
   padding: 1px;
   width: 150px;
-  height: 3px;
+  height: 100px;
   background-color: #6A5ACD;
   text-decoration: none;
   border: 2px solid black;
-  padding:5px 10px;
+  padding:5px 1px;
   z-index: 1005;
 }
 
-.dropdown-options a:hover {
+.dropdown-options22 a:hover {
   color: #0a0a23;
   background-color: #ddd;
+  height: -10px;
   border-radius:5px;
 }
 
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+
+.search-box {
+  font-size: 10px;
+  border: solid 0.3em blue;
+  display: inline-block;
+  position: relative;
+  border-radius: 2.5em;
+}
+.search-box input[type=text] {
+  font-family: inherit;
+  font-weight: bold;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.3em 2.1em 0.3em 0.4em;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type=text]:focus {
+  outline: none;
+}
+.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
+  width: 18em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type=text]:focus + button[type=reset], .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
+  transform: rotate(-45deg) translateY(0);
+  transition: transform 150ms ease-out 800ms;
+}
+.search-box input[type=text]:focus + button[type=reset]:after, .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
+  opacity: 1;
+  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
+}
+.search-box button[type=reset] {
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  transform: rotate(-45deg) translateY(2.2em);
+  transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type=reset]:before, .search-box button[type=reset]:after {
+  content: "";
+  background-color: Black;
+  border: 2px solid black;
+  box-shadow: 0.5px 0 0 white,-0.5px 0 0 white, 0 0.5px 0 white;
+  width: 0.3em;
+  height: 1.6em;
+  position: absolute;
+}
+
+
+
+.search-box button[type=reset]:after {
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0.3em;
+  height: 1.8em;
+  box-shadow: none;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
 
 
 

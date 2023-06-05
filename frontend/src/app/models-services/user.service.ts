@@ -2,9 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from 'src/app/shared/models/User';
-import { SERVICES_URL, USER_LOGIN_URL ,USER_REGISTER_URL} from '../shared/constants/urls';
+import { SERVICES_URL, USER_LOGIN_URL ,USER_REGISTER_URL, USER_URL} from '../shared/constants/urls';
 import { IUserlogin } from '../shared/interfaces/IUserLogin';
 import { ToastrService } from 'ngx-toastr';
+import { Service } from '../shared/models/Service';
 
 
 
@@ -18,6 +19,9 @@ export class UserService {
   constructor(private http:HttpClient,private toastrService:ToastrService) {
     this.userObservable  =this.userSubject.asObservable()
    }
+   findById(id:string):Observable<User>{
+    return this.http.get<User>(`${USER_URL}/user/${id}`)
+    }
 
    login(userLogin:IUserlogin):Observable<User>{
       return this.http.post<User>(USER_LOGIN_URL,userLogin).pipe(
@@ -26,7 +30,7 @@ export class UserService {
              this.setUserToLocalStorage(user);
               this.userSubject.next(user)
               this.toastrService.success(
-                `Welcom ${user.name} to Hiver 1`,
+                `Welcome ${user.name} to FREELACERS-LAND `,
                 `Login successful :)`,
                 {positionClass: 'toast-top-center'}
               )
@@ -58,14 +62,14 @@ export class UserService {
 
 
   register(user: any): Observable<User> {
-    const newUser: User = {  
+    const newUser: User = {
       _id: '',
       name: '',
       email: '',
       password: '',
       token: ''
     };
-  
+
     newUser.name = user.name;
     newUser.email = user.email;
     newUser.password = user.password;
@@ -74,7 +78,7 @@ export class UserService {
       tap({
         next: (user) => {
           this.toastrService.success(
-            `Account created successfully`,
+            `Account created successfully in FREELACERS-LAND`,
             `Success :)`,
             { positionClass: 'toast-top-left' }
           );
@@ -89,7 +93,35 @@ export class UserService {
       })
     );
   }
-  
+
+  addToCart(userId:string,serviceId:string):Observable<User> {
+
+
+    return this.http.put<User>(`${USER_URL}/cart/${userId}/${serviceId}`, null).pipe(
+      tap({
+        next: (user) => {
+          this.toastrService.success(
+            `Service added successfully to cart`,
+            `Success :)`,
+            { positionClass: 'toast-top-left' }
+          );
+        },
+        error: (errorResponse) => {
+
+          this.toastrService.error(
+             undefined,
+            `Service Already Existe in cart `,
+            { positionClass: 'toast-center-center' }
+          );
+
+        }
+      })
+    );
+
+
+
+  }
+
 
 
 

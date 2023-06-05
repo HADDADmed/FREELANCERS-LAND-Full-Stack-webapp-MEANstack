@@ -1,0 +1,36 @@
+
+
+
+<div class="containers">
+    <div  style="border: 3px solid black " class="container1">
+
+
+                <p >Hi,<br/> {{user.name}}</p>
+                <a style="border: 3px solid black "class="btn btn-warning btn-sm "  href="/services/new" >Become a Seller</a>
+
+
+    </div>
+    <div class="container2">
+               <div>
+                  <p >{{user.name}}</p>
+                  <p>Here's All the <span style="font-size: 25px; font-family: Brush Script MT;">services </span> That you need</p>
+               </div>
+               <button style="width:50px; height:50px; border:2px solid black;"class="btn btn-light btn-sm rounded-circle leftButton" (click)="leftScroll()">
+                <i style="font-size: 30px ;" class="fa-solid fa-angles-left"></i>
+              </button>
+               <div class="categories" id="categories">
+                      <div class="cate" *ngFor="let category of categries">
+                          <div  class="catgoryElement">
+                            {{category}}
+                          </div>
+                      </div>
+               </div>
+               <button style="width:50px; height:50px; border:2px solid black;"class="btn btn-light btn-sm rounded-circle rightButton" (click)="rightScroll()">
+                <i style="font-size: 30px ;" class="fa-solid fa-angles-right"></i>
+              </button>
+
+    </div>
+
+
+</div>
+

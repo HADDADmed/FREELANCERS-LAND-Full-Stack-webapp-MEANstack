@@ -19,12 +19,12 @@
 
                     <li>
                         <div class="dropdown"  *ngIf="isAuthenticated()">
-                          <button  >
-                              <img src={{user.imgPath}} style="height: 50px; border-radius: 50%;" alt="Account">
+                          <button>
+                              <img src={{user.imgPath}} style="height: 45px; border-radius: 50%;" alt="Account">
                                 <strong>  {{user.name }}</strong>
                           </button>
                           <div class="dropdown-options">
-                            <a href="#">Account</a>
+                            <a routerLink="/account">Account</a>
                             <a routerLink="/services/new">Add service</a>
                             <a href="#">My Services</a>
                             <a routerLink="/favorite">My favorites</a>
@@ -34,35 +34,32 @@
                           </div>
                         </div>
                         <div class="dropdown"  *ngIf="!isAuthenticated()">
-                          <button routerLink="/login" >
-                              <img src="assets/images/me.jpeg" style="height: 50px;" alt="Account">
-                                <strong> Login</strong>
-                          </button>
+                          <button id="DropDown" routerLink="/login" >
+                            <img src="assets/images/navbarImgs/pngwing.com.png" style="height: 50px; border-radius: 50%;" alt="Account">
+                        </button>
                           <div class="dropdown-options">
-                            <a (click)="openDialog()">Sign up</a>
-
-
+                            <a (click)="openDialog()"><strong>Sign up</strong></a>
+                            <a routerLink="/login"><strong>Login</strong></a>
                           </div>
                         </div>
 
               </li>
 
         </div>
+
         <div id="navbar2" *ngIf="isActive() && !isLoginPageActive()"  >
               <ul>
 
                 <li>  <a  routerLink="/"><strong>Home Page</strong></a> </li>
-                <li>  <a  routerLink="/1" ><strong>(Link Test1)</strong></a> </li>
-                <li>  <a  routerLink="/2"><strong>(Link Test2)</strong></a> </li>
-                <li>  <a  routerLink="/3" ><strong>(Link Test3)</strong></a> </li>
-                <li>  <a  routerLink="/4"><strong>(Link Test4)</strong></a>  </li>
-                <li>  <a  routerLink="/5" ><strong>(Link Test5)</strong></a> </li>
-                <li>  <a  routerLink="/6"><strong>(Link Test6)</strong></a> </li>
-                <li>  <a  routerLink="/7"><strong>(Link Test7)</strong></a> </li>
-                <li>  <a  routerLink="/8"><strong>(Link Test8)</strong></a> </li>
-                <li>  <a  routerLink="/9" ><strong>(Link Test9)</strong></a> </li>
-                <li>  <a  routerLink="/10"><strong>(Link Test10)</strong></a> </li>
-                <li>  <a  routerLink="/10"><strong>(Link Test11)</strong></a> </li>
+                <li>  <a  routerLink="/1" ><strong>Graphic Design</strong></a> </li>
+                <li>  <a  routerLink="/2"><strong>Writing and Content Creation</strong></a> </li>
+                <li>  <a  routerLink="/2"><strong>Web Development</strong></a> </li>
+                <li>  <a  routerLink="/3" ><strong>Video Editing</strong></a> </li>
+                <li>  <a  routerLink="/4"><strong>Translation</strong></a>  </li>
+                <li>  <a  routerLink="/5" ><strong>Illustration</strong></a> </li>
+                <li>  <a  routerLink="/6"><strong>Voice Over</strong></a> </li>
+                <li>  <a  routerLink="/7"><strong>Proofreading</strong></a> </li>
+
 
 
               </ul>

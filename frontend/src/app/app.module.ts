@@ -31,6 +31,11 @@ import { RegistrationComponent } from './components/pages/registration/registrat
 import { AcountComponent } from './components/acount/acount.component';
 import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
 import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
+import { HelloComponent } from './components/partials/hello/hello.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { MyServicesComponent } from './components/pages/my-services/my-services.component';
+import { CheckOutPageComponent } from './components/pages/check-out-page/check-out-page.component';
+import { MapComponent } from './components/partials/map/map.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { PaymentDialogComponent } from './components/dialogs/payment-dialog/paym
     AcountComponent,
     VerticalScrollServicesComponent,
     PaymentDialogComponent,
+    HelloComponent,
+    HomePageComponent,
+    MyServicesComponent,
+    CheckOutPageComponent,
+    MapComponent,
   ],
   imports: [
     FormsModule,

@@ -1,5 +1,5 @@
-import { UserService } from './../../../services/user.service';
-import { ServiceService } from './../../../services/service.service';
+import { UserService } from '../../../models-services/user.service';
+import { ServiceService } from '../../../models-services/service.service';
 import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';

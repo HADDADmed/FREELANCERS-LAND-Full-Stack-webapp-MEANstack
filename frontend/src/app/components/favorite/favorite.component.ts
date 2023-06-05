@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ServiceService } from 'src/app/services/service.service';
+import { ServiceService } from 'src/app/models-services/service.service';
 import { Service } from 'src/app/shared/models/Service';
 
 @Component({
@@ -36,7 +36,7 @@ export class FavoriteComponent {
   getFavorites(){
     if("favorite" in localStorage){
       this.favoriteItem=JSON.parse(localStorage.getItem("favorite")!)
-    } 
+    }
   }
   addAmount(index:number){
     localStorage.setItem("favorite",JSON.stringify(this.favoriteItem))

@@ -2,11 +2,15 @@
 
 
 
+
 <div class="co">
+  <div class="imageUser">
+    <img [src]="data.imgPath" [alt]="data.name">
+  </div>
   <div *ngIf="!isEditing; else editingView">
     <ul class="custom-list">
       <li><strong>Name:</strong>{{data.name}}</li>
-      <li>
+      <!--<li>
         <strong>Password:</strong>
         <span class="password-display">
           <ng-container *ngIf="passwordVisible; else asterisks">{{ data.password }}</ng-container>
@@ -15,10 +19,12 @@
         <button (click)="togglePasswordVisibility()" class="eye-button">
           <i class="fa-solid" [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
         </button>
-      </li>
+      </li> -->
       <li><strong>Email:</strong>{{data.email}}</li>
     </ul>
-    <strong style="margin-left:10px; cursor:pointer;" (click)="enableEditing()">Edit   <i class="fa-solid fa-pen-to-square"></i></strong>
+    <div class="px-4" style="margin-left:100px;">
+    <strong  style="margin-left:10px; cursor:pointer;" (click)="enableEditing()">Edit   <i class="fa-solid fa-pen-to-square"></i></strong>
+  </div>
   </div>
 
   <ng-template #editingView>
