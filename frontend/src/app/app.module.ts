@@ -34,22 +34,22 @@ import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scro
 import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { ContactComponent } from './components/contact/contact.component';
-import { AngularFireModule } from 'angularfire2';
-import {AngularFirestore } from 'angularfire2/firestore';
+//import { AngularFireModule } from 'angularfire2';
+//import {AngularFirestore } from 'angularfire2/firestore';
 import { HelloComponent } from './components/partials/hello/hello.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { MyServicesComponent } from './components/pages/my-services/my-services.component';
 import { CheckOutPageComponent } from './components/pages/check-out-page/check-out-page.component';
 import { MapComponent } from './components/partials/map/map.component';
 
-export const firebaseConfig={
-  apiKey: "AIzaSyAt7IjelbMOqYyXwFhFRIEED5gntQc5MbY",
-  authDomain: "freelanceland07.firebaseapp.com",
-  projectId: "freelanceland07",
-  storageBucket: "freelanceland07.appspot.com",
-  messagingSenderId: "668270896011",
-  appId: "1:668270896011:web:6328e18a0a0775a59c458e"
-}
+// export const firebaseConfig={
+//   apiKey: "AIzaSyAt7IjelbMOqYyXwFhFRIEED5gntQc5MbY",
+//   authDomain: "freelanceland07.firebaseapp.com",
+//   projectId: "freelanceland07",
+//   storageBucket: "freelanceland07.appspot.com",
+//   messagingSenderId: "668270896011",
+//   appId: "1:668270896011:web:6328e18a0a0775a59c458e"
+// }
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +98,7 @@ export const firebaseConfig={
       timeOut:3000,
       newestOnTop:false,
     }),
-    AngularFireModule.initializeApp(firebaseConfig)
+    //AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
