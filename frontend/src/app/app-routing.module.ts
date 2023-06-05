@@ -12,6 +12,7 @@ import { combineLatest } from 'rxjs';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { AcountComponent } from './components/acount/acount.component';
 import { VerticalScrollServicesComponent } from './servicesDisplay/vertical-scroll-services/vertical-scroll-services.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { PaymentDialogComponent } from './components/dialogs/payment-dialog/payment-dialog.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HelloComponent } from './components/partials/hello/hello.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'carts',component:CartsComponent},
   {path:'favorite',component:FavoriteComponent},
   {path:'account',component:AcountComponent},
+  {path:'contact',component:ContactComponent},
   {path:'payment/:serviceId',component:PaymentDialogComponent},
   {path:'checkout',component:CheckOutPageComponent},
   {path:"**",redirectTo:"",pathMatch:"full"}

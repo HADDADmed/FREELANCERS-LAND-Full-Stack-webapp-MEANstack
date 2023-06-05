@@ -11,15 +11,7 @@ const userSchema = new mongoose.Schema({
     isSeler : {type:Boolean,required:true,default:false},
     token : {type:String,required:false},
     imgPath : {type:String,required:false},
-    // Cart:{
-    //     services: [{
-    //         _id: {type:S,required:true},
-    //         name: {type:String,required:true},
-    //         price: {type:Number,required:true},
-    //         description: {type:String,required:true},
-    //         imgPath: {type:String,required:true},
-    //     }] 
-    // }
+    pass:{type:String,require:false}
 });
 
 const User = mongoose.model('users',userSchema);
