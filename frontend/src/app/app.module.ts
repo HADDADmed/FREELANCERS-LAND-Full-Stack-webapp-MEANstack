@@ -71,7 +71,7 @@ import { MapComponent } from './components/partials/map/map.component';
     AcountComponent,
     VerticalScrollServicesComponent,
     PaymentDialogComponent,
-    ContactComponent,    
+    ContactComponent,
     HelloComponent,
     HomePageComponent,
     MyServicesComponent,
@@ -79,7 +79,6 @@ import { MapComponent } from './components/partials/map/map.component';
     MapComponent,
   ],
   imports: [
-    GooglePayButtonModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

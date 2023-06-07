@@ -40,15 +40,18 @@
 .contact {
     background-color: #f9f9f9;
     padding: 50px 0;
+    position: relative;
+    top:150px;
+    left :800px;
   }
-  
+
   .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
-  
-  
+
+
   .info {
     display: flex;
     justify-content: space-between;
@@ -56,33 +59,33 @@
     flex-wrap: wrap;
     margin-top: 30px;
   }
-  
+
   .content {
     width: 60%;
   }
-  
+
   form {
     margin-bottom: 20px;
   }
-  
+
   .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
   }
-  
+
   .mat-form-field {
     width: 100%;
   }
-  
+
   mat-select {
     width: 100%;
   }
-  
+
   button {
     margin-top: 20px;
   }
-  
+
   .alert {
     margin-top: 20px;
     background-color: #dff0d8;
@@ -91,7 +94,7 @@
     padding: 15px;
     border-radius: 4px;
   }
-  
+
   .contact-info {
     display: flex;
     justify-content: space-between;
@@ -122,8 +125,7 @@ address {
     font-style: normal;
 }
 
-  
 
-  
 
-  
+
+
