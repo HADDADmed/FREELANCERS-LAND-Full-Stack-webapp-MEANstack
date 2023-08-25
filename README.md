@@ -1,6 +1,5 @@
 # Freelancers-Land - A Fiverr Clone
 
-![Freelancers Land Logo](link_to_your_logo.png)
 
 Freelancers Land is a full-stack web application built using the MEAN (MongoDB, Express, Angular, Node) stack. It serves as a platform where users can offer and avail various services, similar to Fiverr. This README provides an overview of the project structure, installation instructions, and other relevant details.
 
