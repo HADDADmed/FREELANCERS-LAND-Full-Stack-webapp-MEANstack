@@ -48,16 +48,16 @@ Freelancers Land is a full-stack web application built using the MEAN (MongoDB, 
    git clone https://github.com/your-username/freelancers-land.git
 ```
 2. Install dependencies for both frontend and backend:
-     a. frontend 
+     1. frontend 
 ```bash
     cd FREELANCERS-LAND-Full-Stack-webapp-MEANstack/frontend
     npm install
 ```
-     b. backend 
-     ```bash
+     2. backend 
+```bash
     cd FREELANCERS-LAND-Full-Stack-webapp-MEANstack/backend
     npm install
-    ```
+ ```
 
 ## Usage
 
