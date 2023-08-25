@@ -62,11 +62,13 @@ Freelancers Land is a full-stack web application built using the MEAN (MongoDB, 
 ## Usage
 
 1. Run the frontend:
+   
 ```bash
     cd FREELANCERS-LAND-Full-Stack-webapp-MEANstack/frontend
     ng serve
 ```
 2. Run the backend:
+ 
 ```bash
     cd FREELANCERS-LAND-Full-Stack-webapp-MEANstack/backend
     npm start
