@@ -37,7 +37,7 @@ Freelancers Land is a full-stack web application built using the MEAN (MongoDB, 
 - Node.js: Server runtime environment
 - JWT: JSON Web Tokens for user authentication
 - Bcrypt: Password hashing and security
-- Firebase: (Specify how you've used Firebase, if applicable)
+- Firebase
 - Angular Materials: UI component library for Angular
 - Bootstrap: CSS framework for responsive design
 
