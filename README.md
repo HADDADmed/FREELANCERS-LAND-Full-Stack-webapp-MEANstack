@@ -75,7 +75,6 @@ Freelancers Land is a full-stack web application built using the MEAN (MongoDB, 
 ```
 3. Open your browser and visit http://localhost:4200 to start using Freelancers-Land.
 
-4. Open your browser and visit http://localhost:4200 to start using Freelancers-Land.
 
 ## Licence
 
